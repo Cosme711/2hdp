@@ -1,5 +1,5 @@
 <template>
-  <div class="shadow cursor-pointer rounded-md w-11/12 max-w-md m-auto">
+  <div class="shadow cursor-pointer rounded-md">
     <div class="h-48">
       <img :src="podcast.picture.url" class="h-full w-full rounded-t-md">
     </div>
@@ -9,7 +9,7 @@
       </div>
     </div>
     <div class="h-24 flex flex-col justify-center items-center rounded-md shadow-2xl">
-      <p class="w-1/2 flex flex-1 items-center justify-center text-center font-bold">{{ podcast.title }}</p>
+      <p class="w-3/4 flex flex-1 items-center justify-center text-center font-bold">{{ podcast.title }}</p>
       <div class="flex mb-2">
         <p>Saison 7</p>
         <p class="mx-2">|</p>

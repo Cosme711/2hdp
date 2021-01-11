@@ -1,7 +1,10 @@
 <template>
   <main class="bg-gray-100">
-    <div>
-      <div class="pt-40 md:w-11/12 m-auto grid gap-10 sm:gap-x-3 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
+    <div class="w-11/12 m-auto">
+      <div class="pt-32 w-full flex justify-end">
+        <a>Select</a>
+      </div>
+      <div class="w-11/12 sm:w-full m-auto justify-self-stretch pt-10 grid gap-10 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
         <Card v-for="podcast in podcasts" 
           :key="podcast.id"
           :podcast="podcast"
