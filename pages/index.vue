@@ -3,7 +3,7 @@
     <div>
       <Logo />
       <h1 class="title">
-        2hdp
+        2hdp - Dev
       </h1>
       <div class="links">
         <a
