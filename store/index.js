@@ -13,7 +13,7 @@ export const mutations = {
         state.podcasts.push(newPodcasts)
     },
     INCREMENT(state) {
-        state.increment = state.increment + 5
+        state.increment = state.increment + 4
     }
 }
 
@@ -30,7 +30,6 @@ export const actions = {
             commit("PUSH_NEW_PODCASTS", response.data[1])
             commit("PUSH_NEW_PODCASTS", response.data[2])
             commit("PUSH_NEW_PODCASTS", response.data[3])
-            commit("PUSH_NEW_PODCASTS", response.data[4])
             // Crée une fonction forEach id etc ... 
         })
     },
