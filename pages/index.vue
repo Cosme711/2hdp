@@ -6,7 +6,6 @@
             <option value="">Plus récent</option>
             <option value="">Plus ancien</option>
             <option value="">Ordre Alphabétique</option>
-            <option value=""></option>
         </select>
       </div>
       <div class="w-11/12 sm:w-full m-auto justify-self-stretch pt-10 grid gap-10 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">

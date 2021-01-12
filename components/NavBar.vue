@@ -5,12 +5,17 @@
         <img src="../assets/images/logo.png" class="w-16">
       </div>
       <nav>
-        <ul class="w-56 flex justify-between text-black">
-          <li class="cursor-pointer">Home</li>
-          <li class="cursor-pointer">Podcast</li>
-          <li class="cursor-pointer">Live</li>
-          <li class="cursor-pointer">Contact</li>
+        <ul class="hidden sm:flex justify-between text-black">
+          <li class="mx-2 cursor-pointer"><nuxt-link to="/">Home</nuxt-link></li>
+          <li class="mx-2 cursor-pointer"><nuxt-link to="/podcasts">Podcasts</nuxt-link></li>
+          <li class="mx-2 cursor-pointer"><a href="https://www.twitch.tv/2hdp">Live</a></li>
+          <li class="mx-2 cursor-pointer"><a href="https://docs.google.com/spreadsheets/d/1Ft5HlnWAsZ8OHYM2iPVDXLLMXP0huZzO97Pu5MtT110/edit#gid=59860108">Chapeau</a></li>
+          <li class="mx-2 cursor-pointer"><nuxt-link to="/contact">Contact</nuxt-link></li>
         </ul>
+
+        <div @click="toggle" class="sm:hidden">
+          <div class="line__hamburger"></div>
+        </div>
       </nav>
     </div>
   </header>
@@ -18,6 +23,16 @@
 
 <script>
 export default {
+  setup() {
+
+    function toggle() {
+      const hamburger = document.querySelector(".line__hamburger")
+      hamburger.classList.toggle('open')
+    }
+
+    return { toggle }
+    
+  },
   mounted: function(){
     window.onscroll = function() {scrollFunction()};
 
@@ -37,6 +52,44 @@ export default {
 #header {
   transition: 0.2s;
   background-color: white;
+}
+
+.line__hamburger{
+    width: 30px;
+    height: 3px;
+    background-color: black;
+    transition: all .5s ease-in-out;
+}
+
+.line__hamburger::before,
+.line__hamburger::after {
+    content: '';
+    width: 30px;
+    height: 3px;
+    background-color: black;
+    position: absolute;
+    transition: all .5s ease-in-out;
+}
+
+.line__hamburger::before {
+    transform: translateY(-9px);
+}
+
+.line__hamburger::after {
+    transform: translateY(9px);
+}
+
+.line__hamburger.open {
+    transform: translateX(-50px);
+    background: transparent;
+}
+
+.line__hamburger.open::before {
+    transform: rotate(45deg) translate(35px, -35px);
+}
+
+.line__hamburger.open::after {
+    transform: rotate(-45deg) translate(35px, 35px);
 }
   
 </style>
