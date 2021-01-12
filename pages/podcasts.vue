@@ -1,5 +1,5 @@
 <template>
-    <div class="w-11/12 m-auto">
+    <div class="w-11/12 m-auto pb-32">
       <div class="pt-32 w-full flex flex-col items-end">
         <select class="outline-none">
             <option value="">Plus récent</option>
@@ -13,8 +13,8 @@
           :podcast="podcast"
         />
       </div>
-      <div class="py-4 text-center">
-        <a class="cursor-pointer" @click="loadMore()">Load More...</a>
+      <div class="mt-8 text-center">
+        <a class="px-4 py-2 bg-gray-600 text-white rounded-md" @click="loadMore()">Load More...</a>
       </div>
     </div>
 </template>

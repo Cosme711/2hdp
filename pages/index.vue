@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main class="pb-32">
     <div class="bg-gray-100">
       <div class="w-11/12 m-auto">
         <div class="pt-32 w-full flex flex-col items-end">

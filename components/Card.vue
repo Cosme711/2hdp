@@ -1,5 +1,5 @@
 <template>
-  <div class="shadow cursor-pointer rounded-md">
+  <div class="shadow cursor-pointer rounded-md" @click="play">
     <div class="h-48">
       <img :src="podcast.picture.url"  class="h-full w-full rounded-t-md">
     </div>
@@ -23,6 +23,12 @@
 export default {
     props: {
         podcast: Object
+    },
+    methods: {
+      play() {
+        // this.$store.dispatch("player/getURL", this.podcast.mp3[0].url);
+        this.$store.dispatch("player/play");
+      }
     }
 }
 </script>
