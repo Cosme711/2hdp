@@ -25,8 +25,24 @@ import { mapState } from 'vuex'
 
 export default {
     components: { Card },
+    async fetch({ store, error }) { // Crée une persisted data pour ne pas avoir a recharger les podcasts chargé sur la page home
+      try {
+        await store.dispatch('getData', 12)
+      } catch (e) {
+        error({
+          statusCode: 503,
+          message: 'Unable to fetch events at this time. Please try again'
+        })
+      }
+    },
     computed: mapState({
-        podcasts: state => state.podcasts
+      podcasts: state => state.podcasts
     }),
+    methods: {
+      loadMore() {
+        this.$store.dispatch("increment")
+        this.$store.dispatch("loadMore")
+      }
+    },
 }
 </script>

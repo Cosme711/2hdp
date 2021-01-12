@@ -10,11 +10,11 @@ const apiClient = axios.create({
   })
 
 export default {
-    getData() {
-        return apiClient.get('/podcasts?_limit=8&_sort=date_publication:DESC')
+    getData(number) {
+        return apiClient.get('/podcasts?_limit=' + number + '&_sort=date_publication:DESC')
     },
     loadMore(increment) {
-        return apiClient.get('/podcasts?_start=' + increment + '&_limit=4&_sort=date_publication:DESC')
+        return apiClient.get('/podcasts?_start=' + increment + '&_limit=6&_sort=date_publication:DESC')
     }
   }
 

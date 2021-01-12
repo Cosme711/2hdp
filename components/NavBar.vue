@@ -8,8 +8,8 @@
         <ul class="hidden sm:flex justify-between text-black">
           <li class="mx-2 cursor-pointer"><nuxt-link to="/">Home</nuxt-link></li>
           <li class="mx-2 cursor-pointer"><nuxt-link to="/podcasts">Podcasts</nuxt-link></li>
-          <li class="mx-2 cursor-pointer"><a href="https://www.twitch.tv/2hdp">Live</a></li>
-          <li class="mx-2 cursor-pointer"><a href="https://docs.google.com/spreadsheets/d/1Ft5HlnWAsZ8OHYM2iPVDXLLMXP0huZzO97Pu5MtT110/edit#gid=59860108">Chapeau</a></li>
+          <li class="mx-2 cursor-pointer"><a href="https://www.twitch.tv/2hdp" target="_blank">Live</a></li>
+          <li class="mx-2 cursor-pointer"><a href="https://docs.google.com/spreadsheets/d/1Ft5HlnWAsZ8OHYM2iPVDXLLMXP0huZzO97Pu5MtT110/edit#gid=59860108" target="_blank">Chapeau</a></li>
           <li class="mx-2 cursor-pointer"><nuxt-link to="/contact">Contact</nuxt-link></li>
         </ul>
 

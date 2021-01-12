@@ -13,13 +13,13 @@ export const mutations = {
         state.podcasts.push(newPodcasts)
     },
     INCREMENT(state) {
-        state.increment = state.increment + 4
+        state.increment = state.increment + 6
     }
 }
 
 export const actions = {
-    getData({ commit }) {
-        return Service.getData().then(response => {
+    getData({ commit }, number) {
+        return Service.getData(number).then(response => {
             commit("SAVE_PODCASTS", response.data)
         })
     },
@@ -30,11 +30,12 @@ export const actions = {
             commit("PUSH_NEW_PODCASTS", response.data[1])
             commit("PUSH_NEW_PODCASTS", response.data[2])
             commit("PUSH_NEW_PODCASTS", response.data[3])
+            commit("PUSH_NEW_PODCASTS", response.data[4])
+            commit("PUSH_NEW_PODCASTS", response.data[5])
             // Crée une fonction forEach id etc ... 
         })
     },
-    increment({ commit, state }) {
+    increment({ commit }) {
         commit("INCREMENT")
-        console.log(state.increment)
     }
 }
