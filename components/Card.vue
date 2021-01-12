@@ -1,7 +1,7 @@
 <template>
   <div class="shadow cursor-pointer rounded-md">
     <div class="h-48">
-      <img  class="h-full w-full rounded-t-md">
+      <img :src="podcast.picture.url"  class="h-full w-full rounded-t-md">
     </div>
     <div class="h-1 flex justify-center items-center bg-gray-600 ">
       <div class="h-16 w-16 flex justify-center items-center rounded-full bg-white"> <!-- Convertir en m-auto -->
