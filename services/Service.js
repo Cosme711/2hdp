@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const apiClient = axios.create({
-    baseURL: `https://murmuring-beyond-66837.herokuapp.com/`,
+    baseURL: `https://twohdp-api.herokuapp.com/`,
     withCredentials: false, 
     headers: {
       Accept: 'application/json',
