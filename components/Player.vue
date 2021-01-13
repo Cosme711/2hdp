@@ -12,9 +12,8 @@
       </div>
 
       <div class="mx-4 flex justify-between">
-        <font-awesome-icon :icon="['fas', 'play']" class="text-xl text-darkgray" @click="play" v-if="!data.isPause" />
-        <font-awesome-icon :icon="['fas', 'pause']" class="text-xl text-darkgray" @click="pause" v-else />
-        <!-- <span class="material-icons text-4xl cursor-pointer" @click="pause" v-else>pause</span> -->
+        <font-awesome-icon :icon="['fas', 'play']" class="text-xl text-darkgray cursor-pointer" @click="play" v-if="!data.isPause" />
+        <font-awesome-icon :icon="['fas', 'pause']" class="text-xl text-darkgray cursor-pointer" @click="pause" v-else />
       </div>
 
       <div class="flex flex-1 items-center">
@@ -31,9 +30,9 @@
       </div>
 
         <div class="ml-6 flex items-center">
-          <span class="material-icons cursor-pointer" @click="mute" v-if="!data.isMute">volume_up</span>
-          <span class="material-icons cursor-pointer" @click="mute" v-else>volume_off</span>
-          <div class="ml-2 flex items-center h-1 w-56 bg-gray cursor-pointer" @click="volume($event)" ref="progressVolumeElement">
+          <font-awesome-icon :icon="['fas', 'volume-up']" class="text-xl text-darkgray cursor-pointer" @click="mute" v-if="!data.isMute"/>
+          <font-awesome-icon :icon="['fas', 'volume-mute']" class="text-xl text-darkgray cursor-pointer" @click="mute" v-else/>
+          <div class="ml-4 flex items-center h-1 w-56 bg-gray cursor-pointer" @click="volume($event)" ref="progressVolumeElement">
             <div class="h-full bggray" :style="{'width' : data.progressVolume + '%'}"></div>
             <span class="w-4 h-4 flex justify-end bg-gradient-to-r from-gray to-gray rounded-full"></span>
           </div>       

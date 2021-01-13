@@ -4,10 +4,10 @@
             <div class="ml-16 w-2/4 flex flex-1">
                 <p>Chaque semaine, l’équipe de 2 heures de perdues revient avec humour et mauvaise foi sur un film pour le décrypter scène par scène.</p>
             </div>
-            <div class="flex justify-center w-2/4 h-full">
+            <div class="flex justify-center mx-20">
                 <div>
                     <div>
-                        <a class="relative btn overflow-hidden w-12 h-12 bg-white rounded-2xl shadow-xs flex justify-center items-center">
+                        <a class="relative btn overflow-hidden w-16 h-16 bg-darkgray rounded-2xl shadow-xs flex justify-center items-center">
                             <font-awesome-icon :icon="['fab', 'facebook-f']" class="i text-2xl text-yellow "/>
                         </a>
                     </div>
