@@ -2,7 +2,7 @@ import Service from '@/services/Service.js'
 
 export const state = () => ({
     podcasts: [],
-    increment: 10
+    increment: 0
 })
 
 export const mutations = {
@@ -18,21 +18,17 @@ export const mutations = {
 }
 
 export const actions = {
-    getData({ commit }, number) {
-        return Service.getData(number).then(response => {
+    getData({ commit }) {
+        return Service.getData().then(response => {
             commit("SAVE_PODCASTS", response.data)
         })
     },
     loadMore({ commit, state }) {
         return Service.loadMore(state.increment).then(response => {
             console.log(response.data)
-            commit("PUSH_NEW_PODCASTS", response.data[0])
-            commit("PUSH_NEW_PODCASTS", response.data[1])
-            commit("PUSH_NEW_PODCASTS", response.data[2])
-            commit("PUSH_NEW_PODCASTS", response.data[3])
-            commit("PUSH_NEW_PODCASTS", response.data[4])
-            commit("PUSH_NEW_PODCASTS", response.data[5])
-            // Crée une fonction forEach id etc ... 
+            response.data.forEach(element => {
+                commit("PUSH_NEW_PODCASTS", element)
+            })
         })
     },
     increment({ commit }) {

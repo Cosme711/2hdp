@@ -34,7 +34,7 @@ export default {
   components: { Card, Banner },
   async fetch({ store, error }) {
     try {
-      await store.dispatch('getData', 6)
+      await store.dispatch('getData')
     } catch (e) {
       error({
         statusCode: 503,

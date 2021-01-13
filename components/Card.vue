@@ -11,9 +11,9 @@
     <div class="h-24 mt-2 flex flex-col justify-center items-center rounded-b-md bg-white shadow-2xl">
       <p class="w-3/4 flex flex-1 items-center justify-center text-center text-lg font-black">{{ podcast.title }}</p>
       <div class="flex mb-2">
-        <p>Saison 7</p>
+        <p>Saison {{ podcast.saison }}</p>
         <p class="mx-2">|</p>
-        <p>Episode 2</p>
+        <p>Episode {{ podcast.episode }}</p>
       </div>
     </div>
   </div>
