@@ -1,9 +1,9 @@
 <template>
-  <div class="fixed bottom-0 flex items-center bg-gray-300 w-full">
+  <div class="fixed bottom-0 flex items-center bg-gray-300 w-full h-28">
 
     <div class="flex items-center w-11/12 m-auto">
 
-      <div class="mr-4 my-4 flex items-center">
+      <div class="mr-4 flex items-center">
         <img class="w-16 h-16 rounded-full" src="https://tailwindcss.com/img/card-top.jpg">
         <div class="ml-2">
           <p>Name</p>
@@ -44,9 +44,9 @@
 </template>
 
 <script>
-import { reactive, ref } from '@nuxtjs/composition-api';
-import { mapState } from 'vuex'
+import { reactive, ref, watch } from '@nuxtjs/composition-api';
 import { Howl, Howler } from 'howler';
+import { mapState } from 'vuex';
 
 export default {
   name: 'App',
@@ -74,12 +74,14 @@ export default {
     }
 
     function play() {
-      if(this.currentPlaying) {
-        var file = data.file = new Howl({
-          src: [this.currentPlaying],
+      var file;
+      if(data.file) {
+        file = data.file
+      } else {
+        file = data.file = new Howl({
+          src: [this.currentURL],
           html5: true, // A live stream can only be played through HTML5 Audio.
           format: ['mp3'],
-          autoplay: true,
           onplay: function() {
             data.isPause = true;
             data.duration = formatTime(file.duration())
@@ -95,15 +97,14 @@ export default {
             window.requestAnimationFrame(stepFunction.bind(this));
           }
         });
+      }
       data.isPause = true;
       file.play();
-      }
     }
 
     function pause() {
       var file = data.file;
-      console.log(data.isPause)
-      if(data.isPause) {
+      if(file) {
         file.pause();
         data.isPause = true;
       }
@@ -146,12 +147,31 @@ export default {
         data.isMute ? file.mute(true) : file.mute(false)
       }
 
+      function stop() {
+        var file = data.file;
+        if (data.file) {
+                  file.stop();
+        }
+      }
 
-    return { data, progressTimerElement, progressVolumeElement, play, pause, seek, volume, mute }
+      // const currentURL = computed(() => state.player.currentURL);
+
+      // watch(() => currentURL, (new, old) => {
+      //   console.log("hey")
+      // })
+
+    return { data, progressTimerElement, progressVolumeElement, play, pause, seek, volume, mute, stop }
 
   },
   computed: mapState({
-    currentPlaying: state => state.player.currentPlaying
+    currentURL: state => state.player.currentURL
   }),
+  watch: {
+    currentURL: function() {
+      this.stop()
+      this.data.file = null
+      this.play() 
+    }
+  }
 }
 </script>

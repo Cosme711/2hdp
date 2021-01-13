@@ -26,8 +26,8 @@ export default {
     },
     methods: {
       play() {
-        // this.$store.dispatch("player/getURL", this.podcast.mp3[0].url);
-        this.$store.dispatch("player/play");
+        this.$store.dispatch("player/getURL", this.podcast.mp3[0].url);
+        // this.$store.dispatch("player/play");
       }
     }
 }
