@@ -1,6 +1,6 @@
 <template>
   <main class="pb-32 font-Lato">
-    <div class="bg-white h-full">
+    <div class="bg-white h-full min-h-screen">
       <div class="w-11/12 m-auto">
         <div class="pt-32 w-full flex flex-col items-end">
           <select class="outline-none">

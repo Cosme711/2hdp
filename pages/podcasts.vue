@@ -49,6 +49,6 @@ export default {
         this.$store.dispatch("increment")
         this.$store.dispatch("loadMore")
       }
-    },
+    }
 }
 </script>
