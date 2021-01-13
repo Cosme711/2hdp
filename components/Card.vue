@@ -5,7 +5,7 @@
     </div>
     <div class="h-1 flex justify-center items-center bg-darkgray ">
       <div class="h-16 w-16 flex justify-center items-center rounded-full bg-white"> <!-- Convertir en m-auto -->
-        <span class="material-icons icons test text-darkgray">play_circle_outline</span>
+        <font-awesome-icon :icon="['fas', 'play']" class="text-xl text-darkgray"/>
       </div>
     </div>
     <div class="h-24 flex flex-col justify-center items-center rounded-b-md bg-white shadow-2xl">

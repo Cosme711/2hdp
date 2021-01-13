@@ -1,6 +1,6 @@
 <template>
   <main class="pb-32">
-    <div class="bg-gray">
+    <div class="bg-white">
       <div class="w-11/12 m-auto">
         <div class="pt-32 w-full flex flex-col items-end">
           <select class="outline-none">
@@ -20,11 +20,13 @@
         </div>
       </div>
     </div>
+    <Banner />
   </main>
 </template>
 
 <script>
 import Card from "@/components/Card.vue"
+import Banner from "@/components/Banner.vue"
 import { mapState } from 'vuex'
 import { reactive } from '@nuxtjs/composition-api'
 

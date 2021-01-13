@@ -12,8 +12,9 @@
       </div>
 
       <div class="mx-4 flex justify-between">
-        <span class="material-icons text-4xl cursor-pointer" @click="play" v-if="!data.isPause">play_arrow</span>
-        <span class="material-icons text-4xl cursor-pointer" @click="pause" v-else>pause</span>
+        <font-awesome-icon :icon="['fas', 'play']" class="text-xl text-darkgray" @click="play" v-if="!data.isPause" />
+        <font-awesome-icon :icon="['fas', 'pause']" class="text-xl text-darkgray" @click="pause" v-else />
+        <!-- <span class="material-icons text-4xl cursor-pointer" @click="pause" v-else>pause</span> -->
       </div>
 
       <div class="flex flex-1 items-center">
