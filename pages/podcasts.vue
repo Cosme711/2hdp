@@ -15,7 +15,11 @@
         />
       </div>
       <div class="mt-8 text-center">
-        <a class="px-4 py-2 bg-gray-600 text-white rounded-md" @click="loadMore()">Load More...</a>
+        <button @click="loadMore()" 
+          class="bg-transparent hover:bg-darkgray text-darkgrey font-semibold hover:text-white py-2 px-4 border border-darkgrey hover:border-darkgray rounded"
+        >
+        Voir plus
+        </button>
       </div>
     </div>
   </div>

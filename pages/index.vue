@@ -15,8 +15,8 @@
             :podcast="podcast"
           />
         </div>
-        <div class="mt-8 text-center">
-          <nuxt-link to="/podcasts" class="px-4 py-2 bg-gray-600 text-white rounded-md">Voir plus</nuxt-link>
+        <div class="py-8 text-center">
+          <nuxt-link to="/podcasts" class="bg-transparent hover:bg-darkgray text-darkgrey font-semibold hover:text-white py-2 px-4 border border-darkgrey hover:border-darkgray rounded">Voir plus</nuxt-link>
         </div>
       </div>
     </div>
