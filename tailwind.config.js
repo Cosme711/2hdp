@@ -25,6 +25,9 @@ module.exports = {
     },
     backgroundSize: {
       'cover': 'cover'
+    },
+    maxWidth: {
+      'small': "15rem"
     }
   },
   variants: {},

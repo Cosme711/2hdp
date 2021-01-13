@@ -4,10 +4,9 @@
     <div class="flex items-center w-11/12 m-auto">
 
       <div class="mr-4 flex items-center">
-        <img class="my-4 w-16 h-16 rounded-full" src="https://tailwindcss.com/img/card-top.jpg">
-        <div class="ml-2">
-          <p>Name</p>
-          <p>Artist</p>
+        <img class="my-4 w-16 h-16 rounded-full" src="../assets/images/logo-1.jpg">
+        <div class="ml-4 font-semibold">
+          <p class="max-w-small">{{ this.title }}</p>
         </div>
       </div>
 
@@ -32,7 +31,7 @@
         <div class="ml-6 flex items-center">
           <font-awesome-icon :icon="['fas', 'volume-up']" class="text-xl text-darkgray cursor-pointer" @click="mute" v-if="!data.isMute"/>
           <font-awesome-icon :icon="['fas', 'volume-mute']" class="text-xl text-darkgray cursor-pointer" @click="mute" v-else/>
-          <div class="ml-4 flex items-center h-1 w-56 bg-gray cursor-pointer" @click="volume($event)" ref="progressVolumeElement">
+          <div class="ml-4 flex items-center h-1 w-32 bg-gray cursor-pointer" @click="volume($event)" ref="progressVolumeElement">
             <div class="h-full bggray" :style="{'width' : data.progressVolume + '%'}"></div>
             <span class="w-4 h-4 flex justify-end bg-gradient-to-r from-gray to-gray rounded-full"></span>
           </div>       
@@ -164,7 +163,8 @@ export default {
 
   },
   computed: mapState({
-    currentURL: state => state.player.currentURL
+    currentURL: state => state.player.currentURL,
+    title: state => state.player.title
   }),
   watch: {
     currentURL: function() {
