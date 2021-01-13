@@ -1,10 +1,10 @@
 <template>
-  <div class="fixed bottom-0 flex items-center bg-gray-300 w-full h-28">
+  <div v-if="this.currentURL" class="fixed bottom-0 flex items-center bg-white w-full h-28">
 
     <div class="flex items-center w-11/12 m-auto">
 
       <div class="mr-4 flex items-center">
-        <img class="w-16 h-16 rounded-full" src="https://tailwindcss.com/img/card-top.jpg">
+        <img class="my-4 w-16 h-16 rounded-full" src="https://tailwindcss.com/img/card-top.jpg">
         <div class="ml-2">
           <p>Name</p>
           <p>Artist</p>
@@ -20,9 +20,9 @@
         <div class="mr-4">
           <p>{{ data.timer }}</p>
         </div>
-        <div class="flex items-center h-1 w-full bg-gray-500 rounded-full cursor-pointer" @click="seek($event)" ref="progressTimerElement">
-          <div class="h-full bg-yellow-500" :style="{'width' : data.progressTimer + '%'}"></div>
-          <span class="w-4 h-4 flex justify-end bg-gradient-to-r from-red-500 to-red-700 rounded-full"></span>
+        <div class="flex items-center h-1 w-full bg-gray rounded-full cursor-pointer" @click="seek($event)" ref="progressTimerElement">
+          <div class="h-full bg-gray" :style="{'width' : data.progressTimer + '%'}"></div>
+          <span class="w-4 h-4 flex justify-end bg-gradient-to-r from-gray to-gray rounded-full"></span>
         </div>
         <div class="ml-4">
           <p>{{data.duration}}</p>
@@ -32,9 +32,9 @@
         <div class="ml-6 flex items-center">
           <span class="material-icons cursor-pointer" @click="mute" v-if="!data.isMute">volume_up</span>
           <span class="material-icons cursor-pointer" @click="mute" v-else>volume_off</span>
-          <div class="ml-2 flex items-center h-1 w-56 bg-gray-500 cursor-pointer" @click="volume($event)" ref="progressVolumeElement">
-            <div class="h-full bg-yellow-500" :style="{'width' : data.progressVolume + '%'}"></div>
-            <span class="w-4 h-4 flex justify-end bg-gradient-to-r from-red-500 to-red-700 rounded-full"></span>
+          <div class="ml-2 flex items-center h-1 w-56 bg-gray cursor-pointer" @click="volume($event)" ref="progressVolumeElement">
+            <div class="h-full bggray" :style="{'width' : data.progressVolume + '%'}"></div>
+            <span class="w-4 h-4 flex justify-end bg-gradient-to-r from-gray to-gray rounded-full"></span>
           </div>       
         </div>
 

@@ -1,4 +1,5 @@
 <template>
+  <div class="bg-gray">
     <div class="w-11/12 m-auto pb-32">
       <div class="pt-32 w-full flex flex-col items-end">
         <select class="outline-none">
@@ -7,7 +8,7 @@
             <option value="">Ordre Alphabétique</option>
         </select>
       </div>
-      <div class="w-11/12 sm:w-full m-auto justify-self-stretch pt-10 grid gap-10 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
+      <div class="w-11/12 test:w-3/4 sm:w-full test2:w-4/5 lg:w-full m-auto justify-self-stretch pt-10 grid gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
         <Card v-for="podcast in podcasts" 
           :key="podcast.id"
           :podcast="podcast"
@@ -17,6 +18,7 @@
         <a class="px-4 py-2 bg-gray-600 text-white rounded-md" @click="loadMore()">Load More...</a>
       </div>
     </div>
+  </div>
 </template>
 
 <script>
