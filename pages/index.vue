@@ -1,6 +1,6 @@
 <template>
-  <main class="pb-32">
-    <div class="bg-white">
+  <main class="pb-32 font-Lato">
+    <div class="bg-white h-screen">
       <div class="w-11/12 m-auto">
         <div class="pt-32 w-full flex flex-col items-end">
           <select class="outline-none">
@@ -31,7 +31,7 @@ import { mapState } from 'vuex'
 import { reactive } from '@nuxtjs/composition-api'
 
 export default {
-  components: { Card },
+  components: { Card, Banner },
   async fetch({ store, error }) {
     try {
       await store.dispatch('getData', 6)

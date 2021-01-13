@@ -19,6 +19,12 @@ module.exports = {
       'test2': "950px",
       'lg': "1260px",
       '2xl': "1600px"
+    },
+    fontFamily: {
+      'Lato': 'Lato'
+    },
+    backgroundSize: {
+      'cover': 'cover'
     }
   },
   variants: {},

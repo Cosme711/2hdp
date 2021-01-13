@@ -30,7 +30,16 @@ export default {
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
     '@nuxtjs/composition-api',
+    '@nuxtjs/google-fonts'
   ],
+
+  googleFonts: {
+    download: true,
+    base64: true,
+    families: {
+      Lato: [700]
+    }
+  },
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [

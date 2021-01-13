@@ -2,7 +2,9 @@
   <header id="header" class="fixed w-full h-24 text-white shadow-md">
     <div class="w-11/12 h-full m-auto flex items-center">
       <div class="flex-1">
-        <img src="../assets/images/logo.png" class="w-16">
+        <nuxt-link to="/">
+          <img src="../assets/images/logo.png" class="w-16">
+        </nuxt-link>
       </div>
       <nav>
         <ul class="hidden sm:flex justify-between text-black">

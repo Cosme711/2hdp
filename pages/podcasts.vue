@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray">
+  <div class="bg-white">
     <div class="w-11/12 m-auto pb-32">
       <div class="pt-32 w-full flex flex-col items-end">
         <select class="outline-none">
