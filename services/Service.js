@@ -18,6 +18,9 @@ export default {
     },
     getNumber() {
         return apiClient.get('/numbers')
+    },
+    getProfiles() {
+        return apiClient.get('/profiles')
     }
   }
 
