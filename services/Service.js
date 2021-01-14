@@ -15,6 +15,9 @@ export default {
     },
     loadMore(increment) {
         return apiClient.get('/podcasts?_start=' + increment + '&_limit=6&_sort=date_publication:DESC')
+    },
+    getNumber() {
+        return apiClient.get('/numbers')
     }
   }
 

@@ -20,8 +20,4 @@ export const actions = {
     getTitle({ commit }, title) {
         commit("GET_TITLE", title)
     },
-    // play({ state }) {
-    //     var file = state.file;
-    //     file.play();
-    // }
 }

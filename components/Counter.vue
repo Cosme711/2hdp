@@ -6,10 +6,10 @@
                     <h1>2 Heures de perdues</h1>
                 </div>
                 <div class="text-3xl text-white">
-                    <p><span class="mr-4">0</span>Podcasts</p>
+                    <p><span class="mr-4">{{ numberOfPodcasts }}</span>Podcasts</p>
                 </div>
-                <div class="text-3xl text-white">
-                    <p><span class="mr-4">0</span>Heures de perdues</p>
+                <div class="mt-2 text-3xl text-white">
+                    <p><span class="mr-4">{{ numberOfHours }}</span>Heures de perdues</p>
                 </div>
             </div>
         </div>
@@ -17,17 +17,26 @@
 </template>
 
 <script>
-import { computed } from "@nuxtjs/composition-api";
+import { mapState } from 'vuex'
 
 export default {
-    setup() {
+  computed: mapState({
+      numberOfPodcasts: state => state.counter.numberOfPodcasts,
+      numberOfHours: state => state.counter.numberOfHours
+  }),
+  methods: {
+      getNumbers() {
+          this.$store.dispatch("counter/getNumber");
+      }
+  },
+  mounted: function() {
+      this.getNumbers();
+  }
 
-    }
 }
 </script>
 
 <style>
-
 .btn:hover .i{
     transform: scale(1.3);
     color: #fff;
