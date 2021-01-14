@@ -33,7 +33,7 @@ export default {
     components: { Card },
     async fetch({ store, error }) { // Crée une persisted data pour ne pas avoir a recharger les podcasts chargé sur la page home
       try {
-        await store.dispatch('getData')
+        await store.dispatch('getPodcasts')
       } catch (e) {
         error({
           statusCode: 503,
@@ -46,7 +46,6 @@ export default {
     }),
     methods: {
       loadMore() {
-        this.$store.dispatch("increment")
         this.$store.dispatch("loadMore")
       }
     }

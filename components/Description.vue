@@ -1,7 +1,7 @@
 <template>
     <div class="w-10/12 m-auto flex">
 
-        <div class="py-20">
+        <div class="py-24">
             <div class="w-2/3">
                 <h2 class="text-5xl font-bold">Le podcast</h2>
                 <p class="mt-4 text-2xl">Chaque semaine, l’équipe de 2 heures de perdues <span class="font-bold">revient avec humour et mauvaise foi 

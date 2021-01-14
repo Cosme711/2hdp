@@ -2,6 +2,7 @@ import Service from '@/services/Service.js'
 
 export const state = () => ({
     podcasts: [],
+    displayed: 3,
     increment: 0
 })
 
@@ -12,25 +13,32 @@ export const mutations = {
     PUSH_NEW_PODCASTS(state, newPodcasts) {
         state.podcasts.push(newPodcasts)
     },
+    INITIALIZE_INCREMENT(state) {
+        state.increment = state.displayed * 2
+    },
     INCREMENT(state) {
-        state.increment = state.increment + 6
-    }
+        state.increment = state.increment + state.displayed
+    },
 }
 
 export const actions = {
-    getData({ commit }) {
-        return Service.getData().then(response => {
+    getData({ commit, state }) {
+        return Service.getData(state.displayed).then(response => {
             commit("SAVE_PODCASTS", response.data)
         })
     },
+    getPodcasts({ commit, state }) {
+        return Service.getData(state.displayed * 2).then(response => {
+            commit("SAVE_PODCASTS", response.data)
+            commit("INITIALIZE_INCREMENT")
+        })
+    },
     loadMore({ commit, state }) {
-        return Service.loadMore(state.increment).then(response => {
+        return Service.loadMore(state.increment, state.displayed).then(response => {
             response.data.forEach(element => {
                 commit("PUSH_NEW_PODCASTS", element)
             })
+            commit("INCREMENT")
         })
     },
-    increment({ commit }) {
-        commit("INCREMENT")
-    }
 }
