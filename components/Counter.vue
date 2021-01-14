@@ -2,7 +2,7 @@
     <div class="bg-black">
         <div class="py-10 m-auto flex justify-center items-center  text-yellow font-bold">
             <div class="w-8/12 flex justify-between">
-                <div class="title flex items-center text-5xl">
+                <div class="title flex items-center text-6xl">
                     <h1>2 Heures de perdues</h1>
                 </div>
                 <div class="flex flex-col">

@@ -25,7 +25,6 @@ export const actions = {
     },
     loadMore({ commit, state }) {
         return Service.loadMore(state.increment).then(response => {
-            console.log(response.data)
             response.data.forEach(element => {
                 commit("PUSH_NEW_PODCASTS", element)
             })

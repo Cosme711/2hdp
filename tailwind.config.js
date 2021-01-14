@@ -13,6 +13,7 @@ module.exports = {
       yellow: "#FEE600",
       test: "#2F4858",
       whiteblue: "#C0FAFF",
+      blue: "338DFF",
       green: "#1DD05D"
     },
     screens: {

@@ -20,8 +20,8 @@
         </div>
       </div>
     </div>
-    <Counter />
     <Banner />
+    <Counter />
     <Description />
   </main>
 </template>
