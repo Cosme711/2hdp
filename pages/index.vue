@@ -15,23 +15,25 @@
             :podcast="podcast"
           />
         </div>
-        <div class="py-8 text-center">
+        <div class="py-8 mt-4 text-center">
           <nuxt-link to="/podcasts" class="bg-transparent hover:bg-darkgray text-darkgrey font-semibold hover:text-white py-2 px-4 border border-darkgrey hover:border-darkgray rounded">Voir plus</nuxt-link>
         </div>
       </div>
     </div>
     <Banner />
+    <Counter />
   </main>
 </template>
 
 <script>
 import Card from "@/components/Card.vue"
 import Banner from "@/components/Banner.vue"
+import Counter from "@/components/Counter.vue"
 import { mapState } from 'vuex'
 import { reactive } from '@nuxtjs/composition-api'
 
 export default {
-  components: { Card, Banner },
+  components: { Card, Banner, Counter },
   async fetch({ store, error }) {
     try {
       await store.dispatch('getData')

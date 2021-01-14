@@ -1,23 +1,18 @@
 <template>
-    <div class="grid grid-cols-2 grid-rows-2 gap-5">
+    <div class="grid grid-cols-3 gap-5">
         <div>
-            <a class="relative btn overflow-hidden w-16 h-16 bg-darkgray rounded-2xl shadow-xs flex justify-center items-center">
-                <font-awesome-icon :icon="['fab', 'instagram']" class="i text-2xl text-yellow "/>
+            <a class="relative btn overflow-hidden w-20 h-20 bg-darkgray rounded-2xl flex justify-center items-center" href="https://open.spotify.com/show/7LwfkOmKG9yf5zLKWLaXgD" target="_blank">
+                <font-awesome-icon :icon="['fab', 'spotify']" class="i text-5xl text-white "/>
             </a>
         </div>
         <div>
-            <a class="relative btn overflow-hidden w-16 h-16 bg-darkgray rounded-2xl shadow-xs flex justify-center items-center">
-                <font-awesome-icon :icon="['fab', 'twitter']" class="i text-2xl text-yellow "/>
+            <a class="relative btn overflow-hidden w-20 h-20 bg-darkgray rounded-2xl flex justify-center items-center" href="https://www.deezer.com/fr/show/57413" target="_blank">
+                <font-awesome-icon :icon="['fab', 'deezer']" class="i text-5xl text-white "/>
             </a>
         </div>
         <div>
-            <a class="relative btn overflow-hidden w-16 h-16 bg-darkgray rounded-2xl shadow-xs flex justify-center items-center">
-                <font-awesome-icon :icon="['fab', 'facebook-f']" class="i text-2xl text-yellow "/>
-            </a>
-        </div>
-        <div>
-            <a class="relative btn overflow-hidden w-16 h-16 bg-darkgray rounded-2xl shadow-xs flex justify-center items-center">
-                <font-awesome-icon :icon="['fab', 'twitch']" class="i text-2xl text-yellow "/>
+            <a class="relative btn overflow-hidden w-20 h-20 bg-darkgray rounded-2xl flex justify-center items-center" href="https://podcasts.apple.com/fr/podcast/2-heures-de-perdues/id949530802" target="_blank">
+                <font-awesome-icon :icon="['fas', 'podcast']" class="i text-5xl text-white "/>
             </a>
         </div>
     </div>

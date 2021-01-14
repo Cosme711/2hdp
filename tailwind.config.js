@@ -10,7 +10,10 @@ module.exports = {
       darkgray: "#4B5563",
       white: "#FFFFFF",
       black: "#000000",
-      yellow: "#ffae00"
+      yellow: "#FEE600",
+      test: "#2F4858",
+      whiteblue: "#C0FAFF",
+      green: "#1DD05D"
     },
     screens: {
       'test': "520px",
