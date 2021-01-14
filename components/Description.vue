@@ -12,7 +12,7 @@
 
         <div class="pt-10 w-1/2">
             <h2 class="text-4xl font-bold">L'équipe</h2>
-            <div class="grid gap-10 grid-cols-4">
+            <div class="mt-4 grid gap-10 grid-cols-4">
                 <Profile v-for="profile in profiles"
                     :key="profile.id"
                     :profile="profile"
