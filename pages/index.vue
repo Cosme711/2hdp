@@ -3,7 +3,7 @@
     <div class="bg-white h-full min-h-screen">
       <div class="w-10/12 m-auto">
         <div class="pt-32 w-full flex flex-col items-end">
-          <select class="outline-none">
+          <select class="outline-none bg-white">
               <option value="">Plus récent</option>
               <option value="">Plus ancien</option>
               <option value="">Ordre Alphabétique</option>

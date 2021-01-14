@@ -1,8 +1,8 @@
 <template>
   <div class="bg-white font-Lato">
-    <div class="w-11/12 m-auto pb-32">
+    <div class="w-10/12 m-auto pb-32">
       <div class="pt-32 w-full flex flex-col items-end">
-        <select class="outline-none">
+        <select class="outline-none bg-white">
             <option value="">Plus récent</option>
             <option value="">Plus ancien</option>
             <option value="">Ordre Alphabétique</option>
