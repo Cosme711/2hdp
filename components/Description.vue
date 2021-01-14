@@ -1,7 +1,7 @@
 <template>
     <div class="w-10/12 m-auto flex">
 
-        <div class="pt-20">
+        <div class="py-20">
             <div class="w-2/3">
                 <h2 class="text-5xl font-bold">Le podcast</h2>
                 <p class="mt-4 text-2xl">Chaque semaine, l’équipe de 2 heures de perdues <span class="font-bold">revient avec humour et mauvaise foi 
@@ -10,9 +10,9 @@
                     est de <span class="font-bold">faire rire les auditeurs et de les faire patienter dans les transports.</span>
                     Bonne humeur et culture de l’à-peu-près sont les principaux moteurs de ce podcast.</p>
             </div>
-            <div class="pt-10 w-1/2">
+            <div class="pt-16 w-1/2">
                 <h2 class="text-5xl font-bold">L'équipe</h2>
-                <div class="mt-4 grid gap-10 grid-cols-4">
+                <div class="mt-8 grid gap-10 grid-cols-4">
                     <Profile v-for="profile in profiles"
                         :key="profile.id"
                         :profile="profile"
@@ -22,7 +22,7 @@
         </div>
 
         <div class="pt-20">
-            <p>ege</p>
+            <Button />
         </div>
         
     </div>
@@ -30,10 +30,11 @@
 
 <script>
 import Profile from "@/components/Profile.vue"
+import Button from "@/components/Button.vue"
 import { mapState } from 'vuex'
 
 export default {
-    components: { Profile },
+    components: { Profile, Button },
     methods: {
         getProfiles() {
             this.$store.dispatch("profiles/getProfiles")
