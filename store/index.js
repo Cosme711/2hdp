@@ -2,7 +2,7 @@ import Service from '@/services/Service.js'
 
 export const state = () => ({
     podcasts: [],
-    displayed: 3,
+    displayed: 6,
     increment: 0
 })
 
