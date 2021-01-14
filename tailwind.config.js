@@ -23,9 +23,6 @@ module.exports = {
       'lg': "1260px",
       '2xl': "1600px"
     },
-    fontFamily: {
-      'Lato': 'Lato'
-    },
     backgroundSize: {
       'cover': 'cover'
     },

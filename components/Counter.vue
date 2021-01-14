@@ -1,15 +1,17 @@
 <template>
     <div class="bg-black">
-        <div class="py-10 w-6/12 m-auto flex items-center  text-yellow font-bold">
-            <div class="flex-1">
-                <div class="mb-4 text-5xl">
+        <div class="py-10 m-auto flex justify-center items-center  text-yellow font-bold">
+            <div class="w-8/12 flex justify-between">
+                <div class="title flex items-center text-5xl">
                     <h1>2 Heures de perdues</h1>
                 </div>
-                <div class="text-3xl text-white">
-                    <p><span class="mr-4">{{ numberOfPodcasts }}</span>Podcasts</p>
-                </div>
-                <div class="mt-2 text-3xl text-white">
-                    <p><span class="mr-4">{{ numberOfHours }}</span>Heures de perdues</p>
+                <div class="flex flex-col">
+                    <div class="text-3xl text-white">
+                        <p><span class="mr-4">{{ numberOfPodcasts }}</span>Podcasts</p>
+                    </div>
+                    <div class="text-3xl text-white">
+                        <p><span class="mr-4">{{ numberOfHours }}</span>Heures de perdues</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -37,6 +39,11 @@ export default {
 </script>
 
 <style>
+
+.title {
+    font-family: 'Rubik', sans-serif;
+}
+
 .btn:hover .i{
     transform: scale(1.3);
     color: #fff;

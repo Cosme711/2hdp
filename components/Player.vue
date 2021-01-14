@@ -1,5 +1,5 @@
 <template>
-  <div v-if="this.currentURL" class="fixed bottom-0 flex items-center bg-white w-full h-28">
+  <div v-if="this.currentURL" class="test fixed bottom-0 flex items-center bg-white w-full h-28 shadow-2xl">
 
     <div class="flex items-center w-11/12 m-auto">
 
@@ -175,3 +175,11 @@ export default {
   }
 }
 </script>
+
+<style>
+
+.test {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+</style>

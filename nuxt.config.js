@@ -37,7 +37,8 @@ export default {
     download: true,
     base64: true,
     families: {
-      Lato: [700, 900]
+      Lato: [700, 900],
+      Rubik: [800]
     }
   },
 

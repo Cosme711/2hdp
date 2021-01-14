@@ -22,6 +22,7 @@
     </div>
     <Banner />
     <Counter />
+    <Description />
   </main>
 </template>
 
@@ -29,11 +30,12 @@
 import Card from "@/components/Card.vue"
 import Banner from "@/components/Banner.vue"
 import Counter from "@/components/Counter.vue"
+import Description from "@/components/Description.vue"
 import { mapState } from 'vuex'
 import { reactive } from '@nuxtjs/composition-api'
 
 export default {
-  components: { Card, Banner, Counter },
+  components: { Card, Banner, Counter, Description },
   async fetch({ store, error }) {
     try {
       await store.dispatch('getData')
