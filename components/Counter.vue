@@ -1,15 +1,15 @@
 <template>
     <div class="bg-black">
         <div class="py-10 m-auto flex justify-center items-center  text-yellow font-bold">
-            <div class="w-8/12 flex justify-between items-center">
-                <div class="title flex items-center text-6xl">
+            <div class="w-10/12 xl:w-8/12 flex justify-center sm:justify-between items-center">
+                <div class="title flex items-center text-2xl first:text-3xl little:text-4xl middle:text-5xl sm:text-3xl md:text-4xl inter:text-5xl lg:text-6xl">
                     <h1>2 Heures de perdues</h1>
                 </div>
-                <div class="flex flex-col">
-                    <div class="text-3xl text-white">
+                <div class="hidden sm:flex flex-col text-white">
+                    <div class="text-lg md:text-xl inter:text-2xl lg:text-3xl">
                         <p><span class="mr-4">{{ numberOfPodcasts }}</span>Podcasts</p>
                     </div>
-                    <div class="text-3xl text-white">
+                    <div class="text-lg md:text-xl inter:text-2xl lg:text-3xl">
                         <p><span class="mr-4">{{ numberOfHours }}</span>Heures de perdues</p>
                     </div>
                 </div>

@@ -1,6 +1,6 @@
 <template>
     <div class="flex flex-col items-center">
-        <div class="h-28 w-24">
+        <div class="h-20 w-16 little:h-28 little:w-24">
             <img :src="profile.image[0].url" class="h-full w-full">
         </div>
         <p class="mt-2 text-xl">{{ profile.name }}</p>

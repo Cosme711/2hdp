@@ -18,11 +18,15 @@ module.exports = {
       green: "#1DD05D"
     },
     screens: {
-      'test': "520px",
+      "first": "360px",
+      'little': "430px",
+      'min': "520px",
+      'middle': "570px",
       'sm': "640px",
       'md': "768px",
-      'test2': "950px",
+      'inter': "950px",
       'lg': "1260px",
+      'xl': "1500px",
       '2xl': "1600px"
     },
     backgroundSize: {

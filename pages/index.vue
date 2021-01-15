@@ -1,15 +1,15 @@
 <template>
   <main class="pb-32 font-Lato">
     <div class="bg-white h-full min-h-screen">
-      <div class="w-10/12 m-auto">
+      <div class="w-10/12 sm:w-11/12 md:w-10/12 m-auto">
         <div class="pt-32 w-full flex flex-col items-end">
-          <select class="outline-none bg-white" @click="test()">
+          <select class="outline-none bg-white">
               <option value="">Plus récent</option>
               <option value="">Plus ancien</option>
               <option value="">Ordre Alphabétique</option>
           </select>
         </div>
-        <div class="w-11/12 test:w-3/4 sm:w-full test2:w-4/5 lg:w-full m-auto pt-10 grid gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
+        <div class="w-11/12 min:w-3/4 sm:w-full inter:w-10/12 lg:w-full m-auto pt-10 grid gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
           <Card v-for="podcast in data.podcastsList" 
             :key="podcast.id"
             :podcast="podcast"
@@ -51,6 +51,10 @@ export default {
   }),
   mounted: function() {
     this.responsiveNumberOfCards()
+    this.$nextTick(function() { // When we resize size screen we call responsiveNumberOfCards function
+      this.responsiveNumberOfCards();
+    })
+    window.addEventListener('resize', this.responsiveNumberOfCards)
   },
   setup() {
 
