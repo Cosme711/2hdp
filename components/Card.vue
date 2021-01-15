@@ -41,8 +41,10 @@ export default {
       }
 
       function play() {
-        this.$store.dispatch("player/getURL", this.podcast.mp3[0].url);
+        this.$store.dispatch("player/getURL", this.podcast.mp3[0].url)
         this.$store.dispatch("player/getTitle", this.podcast.title)
+        this.$store.dispatch("player/getSaison", this.podcast.saison)
+        this.$store.dispatch("player/getEpisode", this.podcast.episode)
       }
 
       return { play, isIndexed, data }

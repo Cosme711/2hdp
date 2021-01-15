@@ -1,5 +1,5 @@
 <template>
-    <div class="w-10/12 m-auto flex">
+    <div class="w-10/12 m-auto flex" id="contact">
 
         <div class="py-24">
             <div class="w-2/3">
@@ -21,7 +21,7 @@
             </div>
         </div>
 
-        <div class="pt-20">
+        <div class="pt-24">
             <Button />
         </div>
         

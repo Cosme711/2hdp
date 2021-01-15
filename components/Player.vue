@@ -5,8 +5,9 @@
 
       <div class="mr-4 flex items-center">
         <img class="my-4 w-16 h-16 rounded-full" src="../assets/images/logo-1.jpg">
-        <div class="ml-4 font-semibold">
-          <p class="max-w-small">{{ this.title }}</p>
+        <div class="ml-4">
+          <p class="max-w-small font-semibold">{{ this.title }}</p>
+          <p class="text-xs">S{{ this.saison }}, E{{this.episode}}</p>
         </div>
       </div>
 
@@ -164,7 +165,9 @@ export default {
   },
   computed: mapState({
     currentURL: state => state.player.currentURL,
-    title: state => state.player.title
+    title: state => state.player.title,
+    saison: state => state.player.saison,
+    episode: state => state.player.episode
   }),
   watch: {
     currentURL: function() {
