@@ -2,8 +2,8 @@ import Service from '@/services/Service.js'
 
 export const state = () => ({
     podcasts: [],
-    displayed: 6,
-    increment: 0
+    displayed: 8,
+    increment: 0,
 })
 
 export const mutations = {
@@ -18,7 +18,7 @@ export const mutations = {
     },
     INCREMENT(state) {
         state.increment = state.increment + state.displayed
-    },
+    }
 }
 
 export const actions = {
