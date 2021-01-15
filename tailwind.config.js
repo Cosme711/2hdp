@@ -19,6 +19,7 @@ module.exports = {
     },
     screens: {
       "first": "360px",
+      "cc": "425px",
       'little': "430px",
       'min': "520px",
       'middle': "570px",

@@ -9,7 +9,7 @@
               <option value="">Ordre Alphabétique</option>
           </select>
         </div>
-        <div class="w-11/12 min:w-3/4 sm:w-full inter:w-10/12 lg:w-full m-auto pt-10 grid gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
+        <div class="w-full cc:w-11/12 min:w-3/4 sm:w-full inter:w-10/12 lg:w-full m-auto pt-10 grid gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
           <Card v-for="podcast in data.podcastsList" 
             :key="podcast.id"
             :podcast="podcast"

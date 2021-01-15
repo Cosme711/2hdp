@@ -1,7 +1,7 @@
 <template>
-  <div v-if="this.currentURL" class="shadow__player fixed bottom-0 flex items-center bg-white w-full h-28">
+  <div v-if="this.currentURL" class="shadow__player fixed bottom-0 flex items-center bg-white w-full">
 
-    <div class="flex items-center w-11/12 m-auto">
+    <div class="flex flex-col md:flex-row items-center w-11/12 m-auto">
 
       <div class="mr-4 flex items-center">
         <img class="my-4 w-16 h-16 rounded-full" src="../assets/images/logo-1.jpg">
@@ -11,34 +11,26 @@
         </div>
       </div>
 
-      <div class="mx-4 flex justify-between">
-        <font-awesome-icon :icon="['fas', 'play']" class="text-2xl text-darkgray cursor-pointer" @click="play" v-if="!data.isPause" />
-        <font-awesome-icon :icon="['fas', 'pause']" class="text-2xl text-darkgray cursor-pointer" @click="pause" v-else />
+      <div class="flex flex-1 items-center my-4 md:my-0 w-full">
+        <div class="mx-4 flex justify-between">
+          <font-awesome-icon :icon="['fas', 'play']" class="text-2xl text-darkgray cursor-pointer" @click="play" v-if="!data.isPause" />
+          <font-awesome-icon :icon="['fas', 'pause']" class="text-2xl text-darkgray cursor-pointer" @click="pause" v-else />
+        </div>
+
+          <div class="mr-4">
+            <p>{{ data.timer }}</p>
+          </div>
+          <div class="flex items-center w-full" ref="progressTimerElement" @click="seek($event)">
+            <input type="range" min="0" max="" :value="data.progressTimer" id="range">
+          </div>
+          <div class="ml-4">
+            <p>{{data.duration}}</p>
+          </div>
       </div>
 
-      <div class="flex flex-1 items-center">
-        <div class="mr-4">
-          <p>{{ data.timer }}</p>
-        </div>
-        <!-- <div class="flex items-center h-2 w-full bg-gray rounded-full cursor-pointer" @click="seek($event)" ref="progressTimerElement">
-          <div class="h-full bg-gray" :style="{'width' : data.progressTimer + '%'}"></div>
-          <span class="w-4 h-4 flex justify-end bg-gradient-to-r from-gray to-gray rounded-full"></span>
-        </div> -->
-        <div class="flex items-center w-full" ref="progressTimerElement" @click="seek($event)">
-          <input type="range" min="0" max="" :value="data.progressTimer" id="range">
-        </div>
-        <div class="ml-4">
-          <p>{{data.duration}}</p>
-        </div>
-      </div>
-
-        <div class="ml-6 flex items-center">
+        <div class="ml-6 hidden inter:flex items-center">
           <font-awesome-icon :icon="['fas', 'volume-up']" class="text-xl text-darkgray cursor-pointer" @click="mute" v-if="!data.isMute"/>
           <font-awesome-icon :icon="['fas', 'volume-mute']" class="text-xl text-darkgray cursor-pointer" @click="mute" v-else/>
-          <!-- <div class="ml-4 flex items-center h-1 w-32 bg-gray cursor-pointer" @click="volume($event)" ref="progressVolumeElement">
-            <div class="h-full bggray" :style="{'width' : data.progressVolume + '%'}"></div>
-            <span class="w-4 h-4 flex justify-end bg-gradient-to-r from-gray to-gray rounded-full"></span>
-          </div>        -->
           <div class="flex items-center w-full" ref="progressVolumeElement" @click="volume($event)">
             <input type="range" min="0" max="" :value="data.progressVolume" id="rangeVolume">
           </div>
