@@ -1,28 +1,28 @@
 <template>
   <main id="home" :class="currentURL ? 'pb-24' : ''">
     <div class="bg-white h-full min-h-screen">
-      <div class="w-10/12 sm:w-11/12 md:w-10/12 m-auto">
-        <div class="pt-32 w-full flex flex-col items-end">
+      <div class="teste w-10/12 sm:w-11/12 md:w-10/12 m-auto">
+        <!-- <div class="pt-32 w-full flex flex-col items-end">
           <select class="outline-none bg-white">
               <option value="">Plus récent</option>
               <option value="">Plus ancien</option>
               <option value="">Ordre Alphabétique</option>
           </select>
-        </div>
+        </div> -->
         <div class="w-full cc:w-11/12 min:w-3/4 sm:w-full inter:w-10/12 lg:w-full m-auto pt-10 grid gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
           <Card v-for="podcast in data.podcastsList" 
             :key="podcast.id"
             :podcast="podcast"
           />
         </div>
-        <div class="py-8 mt-4 text-center">
+        <div class="py-8 mt-2 text-center">
           <nuxt-link to="/podcasts" class="bg-transparent hover:bg-darkgray text-darkgrey font-semibold hover:text-white py-2 px-4 border border-darkgrey hover:border-darkgray rounded">Voir plus</nuxt-link>
         </div>
       </div>
     </div>
     <Counter />
     <Description />
-    <Banner />
+    <Banner class="hidden md:block"/>
     <Footer />
   </main>
 </template>
@@ -105,3 +105,10 @@ export default {
 </script>
 
 
+<style>
+  
+.teste {
+  padding-top: 7rem;
+}
+
+</style>

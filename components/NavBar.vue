@@ -7,16 +7,11 @@
         </nuxt-link>
       </div>
       <nav>
-        <ul class="hidden sm:flex justify-between text-black">
-          <li class="mx-2 cursor-pointer"><nuxt-link :to="{ path: '/', hash: '#home' }">Home</nuxt-link></li>
-          <li class="mx-2 cursor-pointer"><nuxt-link to="/podcasts">Podcasts</nuxt-link></li>
-          <li class="mx-2 cursor-pointer"><a href="https://docs.google.com/spreadsheets/d/1Ft5HlnWAsZ8OHYM2iPVDXLLMXP0huZzO97Pu5MtT110/edit#gid=59860108" target="_blank">Chapeau</a></li>
-          <li class="mx-2 cursor-pointer"><nuxt-link :to="{ path: '/', hash:'#contact' }">Contact</nuxt-link></li>
+        <ul class="flex justify-between text-black tex-base little:text-lg">
+          <li class="mx-2 first:mx-4 cursor-pointer"><nuxt-link :to="{ path: '/', hash: '#home' }">Home</nuxt-link></li>
+          <li class="mx-2 first:mx-4 cursor-pointer"><nuxt-link :to="{ path: '/', hash:'#contact' }">Contact</nuxt-link></li>
+          <li class="mx-2 first:mx-4 cursor-pointer"><nuxt-link to="/podcasts">Podcasts</nuxt-link></li>
         </ul>
-
-        <div @click="toggle" class="sm:hidden">
-          <div class="line__hamburger"></div>
-        </div>
       </nav>
     </div>
   </header>
@@ -24,16 +19,6 @@
 
 <script>
 export default {
-  setup() {
-
-    function toggle() {
-      const hamburger = document.querySelector(".line__hamburger")
-      hamburger.classList.toggle('open')
-    }
-
-    return { toggle }
-    
-  },
   mounted: function(){
     window.onscroll = function() {scrollFunction()};
 
@@ -55,42 +40,4 @@ export default {
   background-color: white;
 }
 
-.line__hamburger{
-    width: 30px;
-    height: 3px;
-    background-color: black;
-    transition: all .5s ease-in-out;
-}
-
-.line__hamburger::before,
-.line__hamburger::after {
-    content: '';
-    width: 30px;
-    height: 3px;
-    background-color: black;
-    position: absolute;
-    transition: all .5s ease-in-out;
-}
-
-.line__hamburger::before {
-    transform: translateY(-9px);
-}
-
-.line__hamburger::after {
-    transform: translateY(9px);
-}
-
-.line__hamburger.open {
-    transform: translateX(-50px);
-    background: transparent;
-}
-
-.line__hamburger.open::before {
-    transform: rotate(45deg) translate(35px, -35px);
-}
-
-.line__hamburger.open::after {
-    transform: rotate(-45deg) translate(35px, 35px);
-}
-  
 </style>
