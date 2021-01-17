@@ -20,7 +20,7 @@
           <div class="mr-4">
             <p>{{ data.timer }}</p>
           </div>
-          <div class="flex items-center w-full" ref="progressTimerElement" @click="seek($event)">
+          <div class="flex items-center w-full cursor-pointer" ref="progressTimerElement" @click="seek($event)">
             <input type="range" min="0" max="" :value="data.progressTimer" id="range">
           </div>
           <div class="ml-4">
@@ -103,8 +103,10 @@ export default {
     function pause() {
       var file = data.file;
       if(file) {
-        file.pause();
-        data.isPause = true;
+        if(data.isPause) {
+          file.pause();
+          data.isPause = true;
+        }
       }
     }
 

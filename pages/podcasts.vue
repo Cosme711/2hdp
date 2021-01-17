@@ -14,7 +14,7 @@
           :podcast="podcast"
         />
       </div>
-      <div class="mt-8 text-center">
+      <div class="mb-12 mt-6 text-center">
         <button @click="loadMore()" 
           class="bg-transparent hover:bg-darkgray text-darkgrey font-semibold hover:text-white py-2 px-4 border border-darkgrey hover:border-darkgray rounded"
         >

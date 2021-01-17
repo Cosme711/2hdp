@@ -1,5 +1,5 @@
 <template>
-  <main class="pb-32 font-Lato">
+  <main id="home" :class="currentURL ? 'pb-24' : ''">
     <div class="bg-white h-full min-h-screen">
       <div class="w-10/12 sm:w-11/12 md:w-10/12 m-auto">
         <div class="pt-32 w-full flex flex-col items-end">
@@ -23,6 +23,7 @@
     <Counter />
     <Description />
     <Banner />
+    <Footer />
   </main>
 </template>
 
@@ -31,11 +32,12 @@ import Card from "@/components/Card.vue"
 import Banner from "@/components/Banner.vue"
 import Counter from "@/components/Counter.vue"
 import Description from "@/components/Description.vue"
+import Footer from "@/components/Footer.vue"
 import { mapState } from 'vuex'
 import { reactive, computed } from '@nuxtjs/composition-api'
 
 export default {
-  components: { Card, Banner, Counter, Description },
+  components: { Card, Banner, Counter, Description, Footer },
   async fetch({ store, error }) {
     try {
       await store.dispatch('getData')
@@ -47,7 +49,8 @@ export default {
     }
   },
   computed: mapState({
-    podcasts: state => state.podcasts
+    podcasts: state => state.podcasts,
+    currentURL: state => state.player.currentURL
   }),
   mounted: function() {
     this.responsiveNumberOfCards()
