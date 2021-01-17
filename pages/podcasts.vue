@@ -1,15 +1,18 @@
 <template>
   <div class="bg-white font-Lato">
     <div class="w-10/12 m-auto pb-32">
-      <div class="pt-32 w-full flex flex-col items-end">
-        <select class="outline-none bg-white">
-            <option value="">Plus récent</option>
-            <option value="">Saison 7</option>
-            <option value="">Saison 6</option>
-            <option value="">Saison 5</option>
-            <option value="">Saison 4</option>
-            <option value="">Saison 3</option>
-        </select>
+      <div class="pt-32 w-full flex justify-between">
+        <h1 class="text-5xl font-semibold">Podcasts</h1>
+        <div class="flex items-center">
+          <select class="pr-2 text-xl outline-none bg-white" v-model="selected">
+              <option value="recent">Plus récent</option>
+              <option value="s7">Saison 7</option>
+              <option value="s6">Saison 6</option>
+              <option value="s5">Saison 5</option>
+              <option value="s4">Saison 4</option>
+              <option value="s3">Saison 3</option>
+          </select>
+        </div>
       </div>
       <div class="w-full cc:w-11/12 min:w-3/4 sm:w-full inter:w-10/12 lg:w-full m-auto pt-10 grid gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
         <Card v-for="podcast in podcasts" 
@@ -31,6 +34,7 @@
 <script>
 import Card from "@/components/Card.vue"
 import { mapState } from 'vuex'
+import { reactive } from '@nuxtjs/composition-api';
 
 export default {
     components: { Card },
@@ -50,6 +54,18 @@ export default {
     methods: {
       loadMore() {
         this.$store.dispatch("loadMore")
+      }
+    },
+    data() {
+      return {
+        selected: "recent"
+      }
+    },
+    watch: {
+      selected: function() {
+        console.log("hey")
+        // this.$store.dispatch("")
+        
       }
     }
 }
