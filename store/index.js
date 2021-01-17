@@ -8,6 +8,7 @@ export const state = () => ({
 
 export const mutations = {
     SAVE_PODCASTS(state, podcasts) {
+        state.podcasts = {} // Here for fix bug with reset filter on podcasts page
         state.podcasts = podcasts
     },
     PUSH_NEW_PODCASTS(state, newPodcasts) {
@@ -18,6 +19,10 @@ export const mutations = {
     },
     INCREMENT(state) {
         state.increment = state.increment + state.displayed
+    },
+    REPLACE_BY_SEASON(state, podcasts) {
+        state.podcasts = {}
+        state.podcasts = podcasts
     }
 }
 
@@ -41,4 +46,10 @@ export const actions = {
             commit("INCREMENT")
         })
     },
+    getBySeason({ commit }, number) {
+        return Service.getBySeason(number).then(response => {
+            console.log(response.data)
+            commit("REPLACE_BY_SEASON", response.data)
+        })
+    }
 }

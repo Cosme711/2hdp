@@ -6,11 +6,8 @@
         <div class="flex items-center">
           <select class="pr-2 text-xl outline-none bg-white" v-model="selected">
               <option value="recent">Plus récent</option>
-              <option value="s7">Saison 7</option>
-              <option value="s6">Saison 6</option>
-              <option value="s5">Saison 5</option>
-              <option value="s4">Saison 4</option>
-              <option value="s3">Saison 3</option>
+              <option value="7">Saison 7</option>
+              <option value="6">Saison 6</option>
           </select>
         </div>
       </div>
@@ -20,7 +17,7 @@
           :podcast="podcast"
         />
       </div>
-      <div class="mb-12 mt-6 text-center">
+      <div v-if="!this.isSelected" class="mb-12 mt-6 text-center">
         <button @click="loadMore()" 
           class="bg-transparent hover:bg-darkgray text-darkgrey font-semibold hover:text-white py-2 px-4 border border-darkgrey hover:border-darkgray rounded"
         >
@@ -38,7 +35,7 @@ import { reactive } from '@nuxtjs/composition-api';
 
 export default {
     components: { Card },
-    async fetch({ store, error }) { // Crée une persisted data pour ne pas avoir a recharger les podcasts chargé sur la page home
+    async fetch({ store, error }) {
       try {
         await store.dispatch('getPodcasts')
       } catch (e) {
@@ -49,7 +46,7 @@ export default {
       }
     },
     computed: mapState({
-      podcasts: state => state.podcasts
+      podcasts: state => state.podcasts,
     }),
     methods: {
       loadMore() {
@@ -58,14 +55,19 @@ export default {
     },
     data() {
       return {
-        selected: "recent"
+        selected: "recent",
+        isSelected: false
       }
     },
     watch: {
       selected: function() {
-        console.log("hey")
-        // this.$store.dispatch("")
-        
+        if(this.selected != "recent") {
+          this.$store.dispatch("getBySeason", this.selected)
+          this.isSelected = true
+        } else {
+          this.$store.dispatch("getPodcasts")
+          this.isSelected = false
+        }
       }
     }
 }

@@ -21,5 +21,8 @@ export default {
     },
     getProfiles() {
         return apiClient.get('/profiles')
+    },
+    getBySeason(number) {
+      return apiClient.get('podcasts?saison=' + number + '&_sort=date_publication:DESC')
     }
   }
