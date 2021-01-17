@@ -20,7 +20,7 @@
         </div>
       </div>
     </div>
-    <Counter />
+    <Counter /> 
     <Description />
     <Banner class="hidden md:block"/>
     <Footer />
