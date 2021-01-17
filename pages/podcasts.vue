@@ -4,8 +4,11 @@
       <div class="pt-32 w-full flex flex-col items-end">
         <select class="outline-none bg-white">
             <option value="">Plus récent</option>
-            <option value="">Plus ancien</option>
-            <option value="">Ordre Alphabétique</option>
+            <option value="">Saison 7</option>
+            <option value="">Saison 6</option>
+            <option value="">Saison 5</option>
+            <option value="">Saison 4</option>
+            <option value="">Saison 3</option>
         </select>
       </div>
       <div class="w-full cc:w-11/12 min:w-3/4 sm:w-full inter:w-10/12 lg:w-full m-auto pt-10 grid gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">

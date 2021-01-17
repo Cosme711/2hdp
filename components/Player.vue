@@ -52,7 +52,6 @@ export default {
 
     const data = reactive({
       file: null,
-      url: "https://2hdp-api.s3.eu-west-3.amazonaws.com/7_14_Wonderful_Life_023712b3c7.mp3",
       isPause: false,
       isMute: false,
       timer: "00:00",
@@ -153,12 +152,6 @@ export default {
                   file.stop();
         }
       }
-
-      // const currentURL = computed(() => state.player.currentURL);
-
-      // watch(() => currentURL, (new, old) => {
-      //   console.log("hey")
-      // })
 
     return { data, progressTimerElement, progressVolumeElement, play, pause, seek, volume, mute, stop }
 
