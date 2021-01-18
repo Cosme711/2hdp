@@ -43,6 +43,12 @@ export default {
         }
       }
 
+      function isSameCard() {
+        if(this.currentURL == this.podcast.mp3[0].url) {
+          this.data.isPauseCard = !this.data.isPauseCard
+        }
+      }
+
       function play() {
         this.$store.dispatch("player/getURL", this.podcast.mp3[0].url)
         this.$store.dispatch("player/getTitle", this.podcast.title)
@@ -50,7 +56,7 @@ export default {
         this.$store.dispatch("player/getEpisode", this.podcast.episode)
       }
 
-      return { data, isIndexed, play }
+      return { data, isIndexed, isSameCard, play }
     },
     mounted: function() {
       this.isIndexed();
@@ -61,9 +67,7 @@ export default {
     }),
     watch: {
       isPause: function() {
-        if(this.currentURL == this.podcast.mp3[0].url) {
-          this.data.isPauseCard = !this.data.isPauseCard
-        }
+        this.isSameCard()
       },
       currentURL: function() {
         if(this.currentURL != this.podcast.mp3[0].url) {
@@ -72,6 +76,9 @@ export default {
           this.data.isPauseCard = true
         }
       }
+    },
+    mounted: function() {
+      this.isSameCard() // Here for fix bug when we start playing on home page and we go to Podcasts pages
     }
 }
 </script>

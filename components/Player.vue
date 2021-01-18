@@ -189,7 +189,7 @@ export default {
       this.$store.dispatch("player/isPause")
     },
     isPause: function() {
-
+      // this.data.isPause = this.isPause <--  Try this 
     }
   }
 }

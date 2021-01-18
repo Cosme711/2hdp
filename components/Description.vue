@@ -14,7 +14,7 @@
                     est de <span class="font-bold">faire rire les auditeurs et de les faire patienter dans les transports.</span>
                     Bonne humeur et culture de l’à-peu-près sont les principaux moteurs de ce podcast.</p>
             </div>
-            <div class="pt-16 w-full md:w-5/6 inter:w-2/3 lg:w-1/2">
+            <div class="pt-16 w-full md:w-5/6 inter:w-2/3 lg:w-2/3">
                 <h2 class="text-5xl font-bold">L'équipe</h2>
                 <div class="mt-8 grid gap-16 little:gap-10 grid-cols-3 min:grid-cols-4">
                     <Profile v-for="profile in profiles"
