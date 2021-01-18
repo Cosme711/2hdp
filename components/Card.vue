@@ -1,11 +1,12 @@
 <template>
-  <div class="shadow cursor-pointer rounded-md" @click="play">
+  <div class="shadow cursor-pointer rounded-md">
     <div class="h-48">
       <img :src="podcast.picture.url"  class="h-full w-full rounded-t-md">
     </div>
     <div class="h-1 flex justify-center items-center bg-darkgray ">
       <div class="h-16 w-16 flex justify-center items-center rounded-full bg-white"> <!-- Convertir en m-auto -->
-        <font-awesome-icon :icon="['fas', 'play']" class="text-xl text-black"/>
+        <font-awesome-icon :icon="['fas', 'play']" class="text-xl text-black" v-if="!data.isPauseCard" @click="play"/>
+        <font-awesome-icon :icon="['fas', 'pause']" class="text-2xl text-darkgray cursor-pointer" v-else />
       </div>
     </div>
     <div class="h-24 mt-2 flex flex-col justify-center items-center rounded-b-md bg-white shadow-2xl">
@@ -21,6 +22,7 @@
 
 <script>
 import { reactive } from '@nuxtjs/composition-api'
+import { mapState } from 'vuex';
 
 export default {
     props: {
@@ -29,7 +31,8 @@ export default {
     setup() {
 
       const data = reactive({
-        isIndexed: true
+        isIndexed: true,
+        isPauseCard: false
       })
 
       function isIndexed() {
@@ -41,16 +44,38 @@ export default {
       }
 
       function play() {
-        this.$store.dispatch("player/getURL", this.podcast.mp3[0].url)
-        this.$store.dispatch("player/getTitle", this.podcast.title)
-        this.$store.dispatch("player/getSaison", this.podcast.saison)
-        this.$store.dispatch("player/getEpisode", this.podcast.episode)
+        if(data.isPauseCard) {
+          this.$store.dispatch("player/isPause");
+        } else {
+          this.$store.dispatch("player/getURL", this.podcast.mp3[0].url)
+          this.$store.dispatch("player/getTitle", this.podcast.title)
+          this.$store.dispatch("player/getSaison", this.podcast.saison)
+          this.$store.dispatch("player/getEpisode", this.podcast.episode)
+        }
       }
 
-      return { play, isIndexed, data }
+      return { data, isIndexed, play }
     },
     mounted: function() {
       this.isIndexed();
+    },
+    computed: mapState({
+      isPause: state => state.player.isPause,
+      currentURL: state => state.player.currentURL
+    }),
+    watch: {
+      isPause: function() {
+        if(this.currentURL == this.podcast.mp3[0].url) {
+          this.data.isPauseCard = !this.data.isPauseCard
+        }
+      },
+      currentURL: function() {
+        if(this.currentURL != this.podcast.mp3[0].url) {
+          this.data.isPauseCard = false
+        } else {
+          this.data.isPauseCard = true
+        }
+      }
     }
 }
 </script>

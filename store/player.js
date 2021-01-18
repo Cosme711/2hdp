@@ -3,7 +3,8 @@ export const state = () => ({
     currentURL: "",
     title: "",
     saison: null,
-    episode: null
+    episode: null,
+    isPause: false
 })
 
 export const mutations = {
@@ -18,6 +19,9 @@ export const mutations = {
     },
     GET_EPISODE(state, episode) {
         state.episode = episode
+    },
+    ISPAUSE(state) {
+        state.isPause = !state.isPause
     }
 }
 
@@ -34,4 +38,7 @@ export const actions = {
     getEpisode({ commit }, episode) {
         commit("GET_EPISODE", episode)
     },
+    isPause({ commit }) {
+        commit("ISPAUSE")
+    }
 }

@@ -42,7 +42,7 @@
 </template>
 
 <script>
-import { reactive, ref, watch } from '@nuxtjs/composition-api';
+import { reactive, ref, watch, computed } from '@nuxtjs/composition-api';
 import { Howl, Howler } from 'howler';
 import { mapState } from 'vuex';
 
@@ -110,6 +110,11 @@ export default {
       }
     }
 
+    const isPauseComputed = computed(() => {
+      return data.isPause
+    })
+
+
     function stepFunction() {
       var file = data.file;
       var seek = file.seek();
@@ -163,14 +168,15 @@ export default {
         }
       }
 
-    return { data, progressTimerElement, progressVolumeElement, play, pause, seek, volume, mute, stop, isIndexed }
+    return { data, progressTimerElement, progressVolumeElement, play, pause, seek, volume, mute, stop, isIndexed, isPauseComputed }
 
   },
   computed: mapState({
     currentURL: state => state.player.currentURL,
     title: state => state.player.title,
     saison: state => state.player.saison,
-    episode: state => state.player.episode
+    episode: state => state.player.episode,
+    isPause: state => state.player.isPause
   }),
   watch: {
     currentURL: function() {
@@ -178,6 +184,12 @@ export default {
       this.data.file = null
       this.play() 
       this.isIndexed()
+    },
+    isPauseComputed: function() {
+      this.$store.dispatch("player/isPause")
+    },
+    isPause: function() {
+
     }
   }
 }
