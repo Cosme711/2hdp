@@ -1,12 +1,12 @@
 <template>
-  <div class="shadow cursor-pointer rounded-md">
+  <div class="shadow cursor-pointer rounded-md" @click="play">
     <div class="h-48">
       <img :src="podcast.picture.url"  class="h-full w-full rounded-t-md">
     </div>
     <div class="h-1 flex justify-center items-center bg-darkgray ">
       <div class="h-16 w-16 flex justify-center items-center rounded-full bg-white"> <!-- Convertir en m-auto -->
-        <font-awesome-icon :icon="['fas', 'play']" class="text-xl text-black" v-if="!data.isPauseCard" @click="play"/>
-        <font-awesome-icon :icon="['fas', 'pause']" class="text-2xl text-darkgray cursor-pointer" v-else />
+        <font-awesome-icon :icon="['fas', 'play']" class="text-xl text-black" v-if="!data.isPauseCard"/>
+        <font-awesome-icon :icon="['fas', 'pause']" class="text-xl text-black" v-else />
       </div>
     </div>
     <div class="h-24 mt-2 flex flex-col justify-center items-center rounded-b-md bg-white shadow-2xl">
@@ -44,14 +44,10 @@ export default {
       }
 
       function play() {
-        if(data.isPauseCard) {
-          this.$store.dispatch("player/isPause");
-        } else {
-          this.$store.dispatch("player/getURL", this.podcast.mp3[0].url)
-          this.$store.dispatch("player/getTitle", this.podcast.title)
-          this.$store.dispatch("player/getSaison", this.podcast.saison)
-          this.$store.dispatch("player/getEpisode", this.podcast.episode)
-        }
+        this.$store.dispatch("player/getURL", this.podcast.mp3[0].url)
+        this.$store.dispatch("player/getTitle", this.podcast.title)
+        this.$store.dispatch("player/getSaison", this.podcast.saison)
+        this.$store.dispatch("player/getEpisode", this.podcast.episode)
       }
 
       return { data, isIndexed, play }
