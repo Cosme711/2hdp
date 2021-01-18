@@ -48,7 +48,6 @@ export const actions = {
     },
     getBySeason({ commit }, number) {
         return Service.getBySeason(number).then(response => {
-            console.log(response.data)
             commit("REPLACE_BY_SEASON", response.data)
         })
     }

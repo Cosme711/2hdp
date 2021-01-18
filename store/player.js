@@ -2,8 +2,8 @@
 export const state = () => ({
     currentURL: "",
     title: "",
-    saison: 0,
-    episode: 0
+    saison: null,
+    episode: null
 })
 
 export const mutations = {

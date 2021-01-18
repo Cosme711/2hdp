@@ -8,6 +8,7 @@
               <option value="recent">Plus récent</option>
               <option value="7">Saison 7</option>
               <option value="6">Saison 6</option>
+              <option value="5">Saison 5</option>
           </select>
         </div>
       </div>
@@ -19,7 +20,7 @@
       </div>
       <div v-if="!this.isSelected" class="mb-12 mt-6 text-center">
         <button @click="loadMore()" 
-          class="bg-transparent hover:bg-darkgray text-darkgrey font-semibold hover:text-white py-2 px-4 border border-darkgrey hover:border-darkgray rounded"
+          class="bg-darkgray font-semibold text-white text-lg py-2 px-4 border border-darkgrey rounded"
         >
         Voir plus
         </button>

@@ -9,7 +9,7 @@
           />
         </div>
         <div class="py-8 mt-2 text-center">
-          <nuxt-link to="/podcasts" class="bg-transparent hover:bg-darkgray text-darkgrey font-semibold hover:text-white py-2 px-4 border border-darkgrey hover:border-darkgray rounded">Voir plus</nuxt-link>
+          <nuxt-link to="/podcasts" class="bg-darkgray font-semibold text-white text-lg py-2 px-4 border border-darkgrey rounded">Voir plus</nuxt-link>
         </div>
       </div>
     </div>
