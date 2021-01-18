@@ -1,6 +1,6 @@
 <template>
   <div class="bg-white font-Lato">
-    <div class="w-10/12 m-auto pb-32">
+    <div :class="currentURL ? 'w-10/12 m-auto pb-24' : 'w-10/12 m-auto'">
       <div class="pt-32 w-full flex justify-between">
         <h1 class="text-5xl font-semibold">Podcasts</h1>
         <div class="flex items-center">
@@ -18,7 +18,7 @@
           :podcast="podcast"
         />
       </div>
-      <div v-if="!this.isSelected" class="mb-12 mt-6 text-center">
+      <div v-if="!this.isSelected" class="mb-12 mt-10 text-center">
         <button @click="loadMore()" 
           class="bg-darkgray font-semibold text-white text-lg py-2 px-4 border border-darkgrey rounded"
         >
@@ -47,7 +47,8 @@ export default {
       }
     },
     computed: mapState({
-      podcasts: state => state.podcasts,
+      podcasts: state => state.podcasts,    
+      currentURL: state => state.player.currentURL
     }),
     methods: {
       loadMore() {

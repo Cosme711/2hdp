@@ -59,7 +59,6 @@ export default {
       podcastsList: {}
     })
 
-
     function responsiveNumberOfCards() {
 
       const min1260 = window.matchMedia('(min-width: 1260px)')
