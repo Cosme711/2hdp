@@ -67,7 +67,7 @@ export default {
       var file;
       file = data.file = new Howl({
         src: [this.currentURL],
-        html5: true, // A live stream can only be played through HTML5 Audio.
+        html5: true,
         format: ['mp3'],
         onplay: function() {
           data.duration = formatTime(file.duration())
@@ -85,10 +85,10 @@ export default {
     }
 
     function stop() {
-      var file = data.file;
-      if (data.file) {
-        file.stop();
-      }
+        var file = data.file;
+        if (data.file) {
+          file.stop();
+        }
     }
 
     function formatTime(secs) {
@@ -128,19 +128,19 @@ export default {
       Howler.volume(per);
     }
 
-    function mute() {
-      var file = data.file;
-      data.isMute = !data.isMute;
-      data.isMute ? file.mute(true) : file.mute(false)
-    }
-      
-    function isIndexed() {
-      if(this.saison != null && this.episode != null) {
-        data.isIndexed = true
-      } else {
-        data.isIndexed = false
+      function mute() {
+        var file = data.file;
+        data.isMute = !data.isMute;
+        data.isMute ? file.mute(true) : file.mute(false)
       }
-    }
+      
+      function isIndexed() {
+        if(this.saison != null && this.episode != null) {
+          data.isIndexed = true
+        } else {
+          data.isIndexed = false
+        }
+      }
 
     return { data, progressTimerElement, progressVolumeElement, start, play_pause, seek, volume, mute, stop, isIndexed }
 
@@ -160,7 +160,6 @@ export default {
       this.isIndexed()
     },
     isPause: function() {
-      console.log(this.isPause)
       var file = this.data.file;
       if(this.isPause) {
         file.pause()
