@@ -2,7 +2,7 @@
     <footer class="bg-black pb-20 md:pb-0">
         <div class="text-white">
             <div class="py-16 flex flex-col md:flex-row justify-around items-center text-xl">
-                <nuxt-link to="/">
+                <nuxt-link :to="{ path: '/', hash: '#home' }">
                     <div class="image">
                         <img src="../assets/images/logo-footer.jpg" class="w-full">
                     </div>
@@ -21,11 +21,6 @@
                 </div>
             </div>
         </div>
-        <!-- <div class="flex justify-center text-gray">
-            <div><a href="https://www.metaweather.com">MetaWeather API</a></div>
-            <div class="mx-2"><p>| <a href="https://devchallenges.io/">DevChallenges</a> |</p></div>
-            <div><a href="https://twitter.com/GressierCosme1">@GressierCosme1</a></div>
-        </div> -->
 </footer>
     
 
