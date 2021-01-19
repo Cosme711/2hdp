@@ -72,6 +72,7 @@ export default {
     },
     mounted: function() {
       this.isIndexed();
+      this.isSameCard() // Here for fix bug when we start playing on home page and we go to Podcasts pages
     },
     computed: mapState({
       isPause: state => state.player.isPause,
@@ -88,9 +89,6 @@ export default {
           this.data.isPauseCard = true
         }
       }
-    },
-    mounted: function() {
-      this.isSameCard() // Here for fix bug when we start playing on home page and we go to Podcasts pages
     }
 }
 </script>
