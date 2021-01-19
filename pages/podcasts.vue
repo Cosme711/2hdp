@@ -18,7 +18,7 @@
           :podcast="podcast"
         />
       </div>
-      <div v-if="!this.isSelected" class="mb-12 mt-10 text-center">
+      <div v-if="!this.isSelected" class="mt-10 text-center">
         <button @click="loadMore()" 
           class="bg-darkgray font-semibold text-white text-lg py-2 px-4 border border-darkgrey rounded"
         >
@@ -26,7 +26,7 @@
         </button>
       </div>
     </div>
-    <Footer />
+    <Footer class="mt-12" />
   </div>
 </template>
 

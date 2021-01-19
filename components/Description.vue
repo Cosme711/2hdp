@@ -1,11 +1,11 @@
 <template>
-    <div class="w-10/12 m-auto block md:flex md:flex-row-reverse" id="contact">
+    <div class="shadows-test w-10/12 m-auto block md:flex md:flex-row-reverse" id="contact">
 
-        <div class="pt-12 md:pt-24">
+        <div class="pt-12 md:pt-16">
             <Button />
         </div>
 
-        <div class="pb-24 pt-12 md:pt-24 flex-1">
+        <div class="pb-24 pt-12 md:pt-16 flex-1">
             <div class="w-full middle:w-11/12 md:10/12 inter:w-9/10 lg:w-2/3">
                 <h2 class="text-5xl font-bold">Le podcast</h2>
                 <p class="mt-4 text-xl little:text-2xl">Chaque semaine, l’équipe de 2 heures de perdues <span class="font-bold">revient avec humour et mauvaise foi 
@@ -48,3 +48,11 @@ export default {
     })
 }
 </script>
+
+<style>
+
+/* .shadows-test {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+} */
+
+</style>

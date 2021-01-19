@@ -207,6 +207,10 @@ export default {
   cursor: pointer;
 }
 
+#range::-moz-range-progress {
+  background-color: green;
+}
+
 #rangeVolume{
   -webkit-appearance: none;
   width: 100%;
@@ -237,4 +241,9 @@ export default {
   background: #00AEC7;
   cursor: pointer;
 }
+
+#rangeVolume::-moz-range-progress {
+  background-color: green;
+}
+
 </style>
