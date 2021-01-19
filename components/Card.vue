@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import { reactive } from '@nuxtjs/composition-api'
+import { reactive, computed } from '@nuxtjs/composition-api'
 import { mapState } from 'vuex';
 
 export default {
@@ -45,18 +45,30 @@ export default {
 
       function isSameCard() {
         if(this.currentURL == this.podcast.mp3[0].url) {
-          this.data.isPauseCard = !this.data.isPauseCard
+          data.isPauseCard = !data.isPauseCard
         }
       }
 
       function play() {
-        this.$store.dispatch("player/getURL", this.podcast.mp3[0].url)
-        this.$store.dispatch("player/getTitle", this.podcast.title)
-        this.$store.dispatch("player/getSaison", this.podcast.saison)
-        this.$store.dispatch("player/getEpisode", this.podcast.episode)
+        if(this.currentURL != this.podcast.mp3[0].url) {
+          this.$store.dispatch("player/getURL", this.podcast.mp3[0].url)
+          this.$store.dispatch("player/getTitle", this.podcast.title)
+          this.$store.dispatch("player/getSaison", this.podcast.saison)
+          this.$store.dispatch("player/getEpisode", this.podcast.episode)
+        } else {
+          this.$store.dispatch("player/isPause")
+        }
       }
 
-      return { data, isIndexed, isSameCard, play }
+      function pause() {
+        this.$store.dispatch("player/isPause")
+      }
+
+      const isPauseCardComputed = computed(() => {
+        return data.isPauseCard
+      })
+
+      return { data, isIndexed, isSameCard, play, pause, isPauseCardComputed }
     },
     mounted: function() {
       this.isIndexed();

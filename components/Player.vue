@@ -13,8 +13,8 @@
 
       <div class="flex flex-1 items-center my-4 md:my-0 w-full">
         <div class="mx-4 flex justify-between">
-          <font-awesome-icon :icon="['fas', 'play']" class="text-2xl text-darkgray cursor-pointer" @click="play" v-if="!data.isPause" />
-          <font-awesome-icon :icon="['fas', 'pause']" class="text-2xl text-darkgray cursor-pointer" @click="pause" v-else />
+          <font-awesome-icon :icon="['fas', 'play']" class="text-2xl text-darkgray cursor-pointer" @click="play_pause" v-if="this.isPause" />
+          <font-awesome-icon :icon="['fas', 'pause']" class="text-2xl text-darkgray cursor-pointer" @click="play_pause" v-else />
         </div>
 
           <div class="mr-4">
@@ -52,7 +52,6 @@ export default {
 
     const data = reactive({
       file: null,
-      isPause: false,
       isMute: false,
       timer: "00:00",
       duration: "00:00",
@@ -64,56 +63,39 @@ export default {
     const progressTimerElement = ref(null);
     const progressVolumeElement = ref(null);
 
+    function start() {
+      var file;
+      file = data.file = new Howl({
+        src: [this.currentURL],
+        html5: true, // A live stream can only be played through HTML5 Audio.
+        format: ['mp3'],
+        onplay: function() {
+          data.duration = formatTime(file.duration())
+          requestAnimationFrame(stepFunction.bind(this));
+        },
+        onseek: function(){
+          window.requestAnimationFrame(stepFunction.bind(this));
+        }
+      });
+      file.play();
+    }
+
+    function play_pause() {
+      this.$store.dispatch("player/isPause")
+    }
+
+    function stop() {
+      var file = data.file;
+      if (data.file) {
+        file.stop();
+      }
+    }
 
     function formatTime(secs) {
       var minutes = Math.floor(secs / 60) || 0;
       var seconds = Math.floor(secs - minutes * 60) || 0;
       return (minutes < 10 ? '0' : '') + minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
     }
-
-    function play() {
-      var file;
-      if(data.file) {
-        file = data.file
-      } else {
-        file = data.file = new Howl({
-          src: [this.currentURL],
-          html5: true, // A live stream can only be played through HTML5 Audio.
-          format: ['mp3'],
-          onplay: function() {
-            data.isPause = true;
-            data.duration = formatTime(file.duration())
-            requestAnimationFrame(stepFunction.bind(this));
-          },
-          onpause: function() {
-            data.isPause = false; 
-          },
-          onend: function() {
-            data.isPause = false;
-          },
-          onseek: function(){
-            window.requestAnimationFrame(stepFunction.bind(this));
-          }
-        });
-      }
-      data.isPause = true;
-      file.play();
-    }
-
-    function pause() {
-      var file = data.file;
-      if(file) {
-        if(data.isPause) {
-          file.pause();
-          data.isPause = true;
-        }
-      }
-    }
-
-    const isPauseComputed = computed(() => {
-      return data.isPause
-    })
-
 
     function stepFunction() {
       var file = data.file;
@@ -146,29 +128,21 @@ export default {
       Howler.volume(per);
     }
 
-      function mute() {
-        var file = data.file;
-        data.isMute = !data.isMute;
-        data.isMute ? file.mute(true) : file.mute(false)
-      }
-
-      function stop() {
-        var file = data.file;
-        if (data.file) {
-          file.stop();
-        }
-      }
-
+    function mute() {
+      var file = data.file;
+      data.isMute = !data.isMute;
+      data.isMute ? file.mute(true) : file.mute(false)
+    }
       
-      function isIndexed() {
-        if(this.saison != null && this.episode != null) {
-          data.isIndexed = true
-        } else {
-          data.isIndexed = false
-        }
+    function isIndexed() {
+      if(this.saison != null && this.episode != null) {
+        data.isIndexed = true
+      } else {
+        data.isIndexed = false
       }
+    }
 
-    return { data, progressTimerElement, progressVolumeElement, play, pause, seek, volume, mute, stop, isIndexed, isPauseComputed }
+    return { data, progressTimerElement, progressVolumeElement, start, play_pause, seek, volume, mute, stop, isIndexed }
 
   },
   computed: mapState({
@@ -182,14 +156,17 @@ export default {
     currentURL: function() {
       this.stop()
       this.data.file = null
-      this.play() 
+      this.start() 
       this.isIndexed()
     },
-    isPauseComputed: function() {
-      this.$store.dispatch("player/isPause")
-    },
     isPause: function() {
-      // this.data.isPause = this.isPause <--  Try this 
+      console.log(this.isPause)
+      var file = this.data.file;
+      if(this.isPause) {
+        file.pause()
+      } else {
+        file.play()
+      }
     }
   }
 }

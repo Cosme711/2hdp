@@ -1,6 +1,6 @@
 <template>
-  <div class="bg-white font-Lato">
-    <div :class="currentURL ? 'w-10/12 m-auto pb-24' : 'w-10/12 m-auto'">
+  <div :class="currentURL ? 'pb-24' : ''">
+    <div class="w-10/12 m-auto">
       <div class="pt-32 w-full flex justify-between">
         <h1 class="text-5xl font-semibold">Podcasts</h1>
         <div class="flex items-center">
@@ -26,16 +26,18 @@
         </button>
       </div>
     </div>
+    <Footer />
   </div>
 </template>
 
 <script>
 import Card from "@/components/Card.vue"
+import Footer from "@/components/Footer.vue"
 import { mapState } from 'vuex'
 import { reactive } from '@nuxtjs/composition-api';
 
 export default {
-    components: { Card },
+    components: { Card, Footer },
     async fetch({ store, error }) {
       try {
         await store.dispatch('getPodcasts')
