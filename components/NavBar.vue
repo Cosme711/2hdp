@@ -9,8 +9,8 @@
       <nav>
         <ul class="flex justify-between text-black font-semibold tex-base little:text-xl">
           <li class="mx-2 first:mx-4 cursor-pointer"><nuxt-link :to="{ path: '/', hash: '#home' }">Home</nuxt-link></li>
-          <li class="mx-2 first:mx-4 cursor-pointer"><nuxt-link :to="{ path: '/', hash:'#contact' }">Contact</nuxt-link></li>
           <li class="mx-2 first:mx-4 cursor-pointer"><nuxt-link to="/podcasts">Podcasts</nuxt-link></li>
+          <li class="mx-2 first:mx-4 cursor-pointer"><nuxt-link :to="{ path: '/', hash:'#contact' }">Contact</nuxt-link></li>
         </ul>
       </nav>
     </div>
