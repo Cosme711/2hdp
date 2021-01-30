@@ -69,5 +69,5 @@ export default {
   build: {
   },
 
-  serverMiddleware: ["redirect-ssl"]
+  // serverMiddleware: ["redirect-ssl"]
 }
