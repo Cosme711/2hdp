@@ -1,6 +1,8 @@
 # 2hdp 
 
-## Build Setup
+## Un prototype de site pour le podcast 2 heures de perdues. 
+
+### Build Setup
 
 ```bash
 # install dependencies
