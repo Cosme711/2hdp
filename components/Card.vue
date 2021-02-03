@@ -4,7 +4,7 @@
       <img :src="podcast.picture.url"  class="h-full w-full rounded-t-md">
     </div>
     <div class="h-1 flex justify-center items-center bg-darkgray ">
-      <div class="h-16 w-16 flex justify-center items-center rounded-full bg-white"> <!-- Convertir en m-auto -->
+      <div class="h-16 w-16 flex justify-center items-center rounded-full bg-white">
         <font-awesome-icon :icon="['fas', 'play']" class="text-xl text-black" v-if="!data.isPauseCard"/>
         <font-awesome-icon :icon="['fas', 'pause']" class="text-xl text-black" v-else />
       </div>

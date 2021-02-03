@@ -7,8 +7,8 @@
 
         <div class="pb-24 pt-12 md:pt-16 flex-1">
             <div class="w-full middle:w-11/12 md:10/12 inter:w-9/10 lg:w-2/3">
-                <h2 class="text-5xl font-bold">Le podcast</h2>
-                <p class="mt-4 text-xl little:text-2xl">Chaque semaine, l’équipe de 2 heures de perdues <span class="font-bold">revient avec humour et mauvaise foi 
+                <h1 class="text-5xl font-bold">2 Heures de perdues</h1>
+                <p class="mt-4 text-xl little:text-2xl">Chaque semaine, l’équipe de 2 heures de perdues<span> revient avec humour et mauvaise foi 
                     sur un film</span> pour le décrypter scène par scène.<br /> De High School Musical aux Enfants du Paradis, 
                     de Pretty Woman à L’Exorciste, aucune oeuvre n’échappe à l’équipe dont le principal objectif 
                     est de <span class="font-bold">faire rire les auditeurs et de les faire patienter dans les transports.</span>

@@ -21,6 +21,7 @@
                 </div>
             </div>
         </div>
+        <p class="text-white text-center">Site non officiel, créé par <a href="https://twitter.com/GressierCosme1" target="_blank">@GressierCosme1</a> dans le but de remplacer le site existant <a href="https://www.2hdp.fr" target="_blank">2hdp.fr</a></p>
 </footer>
     
 
