@@ -5,7 +5,7 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Chaque semaine, l’équipe de 2 heures de perdues revient avec humour et mauvaise foi sur un film pour le décrypter scène par scène.' }
+      { hid: 'description', name: 'description', content: 'Chaque semaine, l’équipe de 2 heures de perdues revient avec humour et mauvaise foi sur un film pour le décrypter scène par scène. ( site non officiel )' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
