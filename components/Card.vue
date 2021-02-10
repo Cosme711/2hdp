@@ -1,7 +1,7 @@
 <template>
   <div class="shadow cursor-pointer rounded-md" @click="play">
     <div class="h-48">
-      <img :src="podcast.picture.url"  class="h-full w-full rounded-t-md">
+      <img :src="podcast.picture.url"  class="h-full w-full rounded-t-md" alt="Podcast Image - 2 Heures de Perdues">
     </div>
     <div class="h-1 flex justify-center items-center bg-darkgray ">
       <div class="h-16 w-16 flex justify-center items-center rounded-full bg-white">
