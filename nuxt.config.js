@@ -1,6 +1,9 @@
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
+    htmlAttrs: {
+      lang: 'en'
+    },
     title: '2 Heures de perdues, podcast cinéma',
     meta: [
       { charset: 'utf-8' },

@@ -4,7 +4,7 @@
             <img :src="profile.image[0].url" class="h-full w-full" alt="Profile Image - 2 Heures de Perdues">
         </div>
         <p class="mt-2 text-xl">{{ profile.name }}</p>
-        <a :href="profile.link" target="_blank" class="link mt-1 text-sm">{{ profile.username }}</a>
+        <a :href="profile.link" rel="noreferrer" target="_blank" class="link mt-1 text-sm">{{ profile.username }}</a>
     </div>
 </template>
 
@@ -19,7 +19,7 @@ export default {
 <style>
 
 .link {
-    color: #0F79FF;
+    color: #0354be;
 }
 
 </style>

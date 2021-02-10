@@ -9,9 +9,9 @@
                 </nuxt-link>
 
                 <div class="w-10/12 md:w-auto m-auto md:m-0 my-12 md:my-0 flex flex-col">
-                    <a class="my-1" href="https://docs.google.com/spreadsheets/d/1Ft5HlnWAsZ8OHYM2iPVDXLLMXP0huZzO97Pu5MtT110/edit#gid=59860108" target="_blank">Chapeau</a>
-                    <a class="my-1" href="http://frequencemoderne.fr/" target="_blank">Fréquence Moderne</a>
-                    <a class="my-1" href="https://fr.tipeee.com/frequence-moderne?fbclid=IwAR2uw5eIqKQ9fmNK7P3ZwhkDUWr1lsnhkqV-rrBjjoxUQdhMhYU9RheubMQ" target="_blank">Tipee</a>
+                    <a class="my-1" href="https://docs.google.com/spreadsheets/d/1Ft5HlnWAsZ8OHYM2iPVDXLLMXP0huZzO97Pu5MtT110/edit#gid=59860108" rel="noreferrer" target="_blank">Chapeau</a>
+                    <a class="my-1" href="http://frequencemoderne.fr/" rel="noreferrer" target="_blank">Fréquence Moderne</a>
+                    <a class="my-1" href="https://fr.tipeee.com/frequence-moderne?fbclid=IwAR2uw5eIqKQ9fmNK7P3ZwhkDUWr1lsnhkqV-rrBjjoxUQdhMhYU9RheubMQ" rel="noreferrer" target="_blank">Tipee</a>
                     <nuxt-link class="my-2" to="">Mentions légales</nuxt-link>
                 </div>
 
@@ -21,7 +21,7 @@
                 </div>
             </div>
         </div>
-        <p class="text-white text-center">Site non officiel, créé par <a href="https://twitter.com/GressierCosme1" target="_blank">@GressierCosme1</a> dans le but de remplacer le site existant <a href="https://www.2hdp.fr" target="_blank">2hdp.fr</a></p>
+        <p class="text-white text-center">Site non officiel, créé par <a href="https://twitter.com/GressierCosme1" rel="noreferrer" target="_blank">@GressierCosme1</a> dans le but de remplacer le site existant <a href="https://www.2hdp.fr" rel="noreferrer" target="_blank">2hdp.fr</a></p>
 </footer>
     
 
