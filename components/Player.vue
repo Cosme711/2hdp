@@ -4,7 +4,7 @@
     <div class="flex flex-col md:flex-row items-center w-11/12 m-auto">
 
       <div class="mr-4 flex items-center">
-        <img class="my-4 w-16 h-16 rounded-full" src="../assets/images/logo-player.jpg">
+        <img class="my-4 w-16 h-16 rounded-full" src="../assets/images/logo-player.jpg" alt="Play Logo - 2 Heures de Perdues">
         <div class="ml-4">
           <p class="max-w-small text-lg font-semibold">{{ this.title }}</p>
           <p class="text-xs" v-if="data.isIndexed">S{{ this.saison }}, E{{this.episode}}</p>

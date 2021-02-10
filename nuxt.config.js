@@ -80,5 +80,5 @@ export default {
     }
   },
 
-  serverMiddleware: ["redirect-ssl"]
+  // serverMiddleware: ["redirect-ssl"]
 }

@@ -13,7 +13,6 @@
         </div>
       </div>
     </div>
-    <!-- <Counter />  -->
     <Description />
     <Banner class="hidden md:block"/>
     <Footer />
@@ -23,11 +22,10 @@
 <script>
 import Card from "@/components/Card.vue"
 import Banner from "@/components/Banner.vue"
-// import Counter from "@/components/Counter.vue"
 import Description from "@/components/Description.vue"
 import Footer from "@/components/Footer.vue"
 import { mapState } from 'vuex'
-import { reactive, computed } from '@nuxtjs/composition-api'
+import { reactive } from '@nuxtjs/composition-api'
 
 export default {
   components: { Card, Banner, Description, Footer },

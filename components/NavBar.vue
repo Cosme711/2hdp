@@ -3,7 +3,7 @@
     <div class="w-10/12 h-full m-auto flex items-center">
       <div class="flex-1">
         <nuxt-link to="/">
-          <img src="../assets/images/logo-2.png" class="w-16">
+          <img src="../assets/images/logo-2.png" class="w-16" alt="Logo 2 Heures de Perdues">
         </nuxt-link>
       </div>
       <nav>

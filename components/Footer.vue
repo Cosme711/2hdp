@@ -4,7 +4,7 @@
             <div class="py-16 flex flex-col md:flex-row justify-around items-center text-xl">
                 <nuxt-link :to="{ path: '/', hash: '#home' }">
                     <div class="image">
-                        <img src="../assets/images/logo-footer.jpg" class="w-full">
+                        <img src="../assets/images/logo-footer.jpg" class="w-full" alt="2 Heures de Perdues">
                     </div>
                 </nuxt-link>
 
