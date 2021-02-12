@@ -1,19 +1,22 @@
 <h1 align="center">2 Heures de Perdues - Cosme Gressier</h1>
 
 <div align="center">
-   Un site pour le podcast<a href="https://twitter.com/2_hdp" target="_blank">2 Heures de Perdues</a>.
+   Un site pour le podcast <a href="https://twitter.com/2_hdp" target="_blank">2 Heures de Perdues</a>.
 </div>
 
 <div align="center">
-    <h3>
+    <h2>
         <a href="https://www.2hdp-dev.com">
             Demo
         </a>
-    </h3>
+    </h2>
 </div>
 
+## Overview
 
-### Built With
+![screenshot](https://github.com/Cosme711/2hdp/blob/master/assets/screenshot.png)
+
+## Built With
 
 <!-- This section should list any major frameworks that you built your project using. Here are a few examples.-->
 
