@@ -1,14 +1,28 @@
-# 2hdp 
+<h1 align="center">2 Heures de Perdues - Cosme Gressier</h1>
 
-## Un prototype de site pour le podcast 2 heures de perdues. 
+<div align="center">
+   Un site pour le podcast<a href="https://twitter.com/2_hdp" target="_blank">2 Heures de Perdues</a>.
+</div>
 
-<h3>
-    <a href="https://www.2hdp-dev.com">
-        Demo
-    </a>
-</h3>
+<div align="center">
+    <h3>
+        <a href="https://www.2hdp-dev.com">
+            Demo
+        </a>
+    </h3>
+</div>
 
-### Build Setup
+
+### Built With
+
+<!-- This section should list any major frameworks that you built your project using. Here are a few examples.-->
+
+- [Vue.js](https://vuejs.org/)
+- [Nuxt](https://nuxtjs.org/)
+- [Tailwind](https://tailwindcss.com/)
+- [Strapi](https://strapi.io/)
+
+## How To Use
 
 ```bash
 # install dependencies
@@ -26,3 +40,9 @@ $ npm run generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+
+## Contact
+
+- Portfolio [Cosme Gressier](https://www.cosme-gressier.com)
+- Github [@Cosme711](https://github.com/Cosme711)
+- Twitter [@GressierCosme1](https://twitter.com/GressierCosme1})
