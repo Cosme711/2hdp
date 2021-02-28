@@ -16,15 +16,14 @@
     "@fortawesome/vue-fontawesome": "^2.0.2",
     "@nuxtjs/axios": "^5.12.2",
     "@nuxtjs/composition-api": "^0.18.0",
-    "@nuxtjs/sitemap": "^2.4.0",
     "core-js": "^3.6.5",
     "howler": "^2.2.1",
     "nuxt": "^2.14.6",
-    "nuxt-fontawesome": "^0.4.0",
-    "redirect-ssl": "^2.0.0"
+    "nuxt-fontawesome": "^0.4.0"
   },
   "devDependencies": {
     "@nuxtjs/google-fonts": "^1.2.0",
+    "@nuxtjs/pwa": "^3.3.5",
     "@nuxtjs/tailwindcss": "^3.1.0"
   }
 }
