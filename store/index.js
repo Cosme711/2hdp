@@ -1,7 +1,17 @@
 import Service from '@/services/Service.js'
 
 export const state = () => ({
-    podcasts: [],
+    podcasts: [
+        {
+            picture: {
+                formats: {
+                    small: {
+                        "url": null
+                    }
+                }
+            }
+        }
+    ],
     displayed: 8,
     increment: 0,
 })

@@ -21,10 +21,8 @@
                 </div>
             </div>
         </div>
-        <p class="text-white text-center">Site non officiel, créé par <a href="https://twitter.com/GressierCosme1" rel="noreferrer" target="_blank">@GressierCosme1</a> dans le but de remplacer le site existant <a href="https://www.2hdp.fr" rel="noreferrer" target="_blank">2hdp.fr</a></p>
-</footer>
-    
-
+        <p class="pb-2 text-white text-center">Site non officiel, créé par <a href="https://twitter.com/GressierCosme1" rel="noreferrer" target="_blank">@GressierCosme1</a> dans le but d'un sujet d'étude. Site officiel : <a class="underline" href="https://www.2hdp.fr" rel="noreferrer" target="_blank">2hdp.fr</a></p>
+    </footer>
 </template>
 
 <style>
