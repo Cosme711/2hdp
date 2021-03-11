@@ -13,8 +13,6 @@ export default {
 
   loading: { color: '#39b982' },
 
-  target: 'server',
-
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
   ],
