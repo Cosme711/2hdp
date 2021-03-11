@@ -34,7 +34,6 @@
 import Card from "@/components/Card.vue"
 import Footer from "@/components/Footer.vue"
 import { mapState } from 'vuex'
-import { reactive } from '@nuxtjs/composition-api';
 
 export default {
     components: { Card, Footer },

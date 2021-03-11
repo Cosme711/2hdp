@@ -1,9 +1,13 @@
 module.exports = {
   future: {
-    // removeDeprecatedGapUtilities: true,
-    // purgeLayersByDefault: true,
+    removeDeprecatedGapUtilities: true,
+    purgeLayersByDefault: true,
   },
-  purge: [],
+  purge: [
+    'components/**/*.vue',
+    'layouts/**/*.vue',
+    'pages/**/*.vue'
+  ],
   theme: {
     colors: {
       gray: "#D8D8D8",
@@ -36,7 +40,5 @@ module.exports = {
     maxWidth: {
       'small': "15rem"
     }
-  },
-  variants: {},
-  plugins: [],
+  }
 }
