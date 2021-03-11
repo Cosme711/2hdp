@@ -25,7 +25,7 @@
 - [Tailwind](https://tailwindcss.com/)
 - [Strapi](https://strapi.io/)
 
-## How To Use
+## How To Use 
 
 ```bash
 # install dependencies
